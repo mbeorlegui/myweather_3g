@@ -1,0 +1,1887 @@
+*** EVALUATION ***
+PROGRAM "My_Weather.abs"
+
+*********************************************************************************************
+TARGET SECTION
+---------------------------------------------------------------------------------------------
+Processor   : Freescale HC08
+Memory Model: SMALL
+File Format : ELF\DWARF 2.0
+Linker      : SmartLinker V-5.0.51 Build 14019, Jan 20 2014
+
+*********************************************************************************************
+FILE SECTION
+---------------------------------------------------------------------------------------------
+BMP180_c.obj                            Model: SMALL,         Lang: ANSI-C
+CLK_c.obj                               Model: SMALL,         Lang: ANSI-C
+DHT11_c.obj                             Model: SMALL,         Lang: ANSI-C
+I2C_c.obj                               Model: SMALL,         Lang: ANSI-C
+LCD_I2C_c.obj                           Model: SMALL,         Lang: ANSI-C
+RTC_c.obj                               Model: SMALL,         Lang: ANSI-C
+Radiacion_c.obj                         Model: SMALL,         Lang: ANSI-C
+main_c.obj                              Model: SMALL,         Lang: ANSI-C
+start08_c.obj                           Model: SMALL,         Lang: ANSI-C
+mc9s08jm60_c.obj                        Model: SMALL,         Lang: ANSI-C
+rtshc08.o (ansiis.lib)                  Model: SMALL,         Lang: ANSI-C
+
+*********************************************************************************************
+STARTUP SECTION
+---------------------------------------------------------------------------------------------
+Entry point: 0x19DB (_Startup)
+_startupData is allocated at 0x19E4 and uses 6 Bytes
+extern struct _tagStartup {
+  unsigned nofZeroOut     1
+  _Range   pZeroOut       0x100     146
+  _Copy    *toCopyDownBeg 0x2D71
+} _startupData;
+
+*********************************************************************************************
+SECTION-ALLOCATION SECTION
+Section Name                    Size  Type     From       To       Segment
+---------------------------------------------------------------------------------------------
+.data                             32   R/W      0x100      0x11F   RAM
+.init                            132     R     0x1960     0x19E3   ROM
+.startData                        18     R     0x19E4     0x19F5   ROM
+.rodata1                         312     R     0x19F6     0x1B2D   ROM
+.text                           4675     R     0x1B2E     0x2D70   ROM
+.copy                             38     R     0x2D71     0x2D96   ROM
+.abs_section_ffdc                  2     R     0xFFDC     0xFFDD   .absSeg0
+.abs_section_ffc4                  2     R     0xFFC4     0xFFC5   .absSeg1
+.abs_section_ffe0                  2     R     0xFFE0     0xFFE1   .absSeg2
+.abs_section_0                     1   N/I        0x0        0x0   .absSeg3
+.abs_section_1                     1   N/I        0x1        0x1   .absSeg4
+.abs_section_2                     1   N/I        0x2        0x2   .absSeg5
+.abs_section_3                     1   N/I        0x3        0x3   .absSeg6
+.abs_section_4                     1   N/I        0x4        0x4   .absSeg7
+.abs_section_5                     1   N/I        0x5        0x5   .absSeg8
+.abs_section_6                     1   N/I        0x6        0x6   .absSeg9
+.abs_section_7                     1   N/I        0x7        0x7   .absSeg10
+.abs_section_8                     1   N/I        0x8        0x8   .absSeg11
+.abs_section_9                     1   N/I        0x9        0x9   .absSeg12
+.abs_section_a                     1   N/I        0xA        0xA   .absSeg13
+.abs_section_b                     1   N/I        0xB        0xB   .absSeg14
+.abs_section_c                     1   N/I        0xC        0xC   .absSeg15
+.abs_section_d                     1   N/I        0xD        0xD   .absSeg16
+.abs_section_e                     1   N/I        0xE        0xE   .absSeg17
+.abs_section_10                    1   N/I       0x10       0x10   .absSeg18
+.abs_section_11                    1   N/I       0x11       0x11   .absSeg19
+.abs_section_16                    1   N/I       0x16       0x16   .absSeg20
+.abs_section_17                    1   N/I       0x17       0x17   .absSeg21
+.abs_section_18                    1   N/I       0x18       0x18   .absSeg22
+.abs_section_1b                    1   N/I       0x1B       0x1B   .absSeg23
+.abs_section_1c                    1   N/I       0x1C       0x1C   .absSeg24
+.abs_section_1d                    1   N/I       0x1D       0x1D   .absSeg25
+.abs_section_1e                    1   N/I       0x1E       0x1E   .absSeg26
+.abs_section_20                    1   N/I       0x20       0x20   .absSeg27
+.abs_section_25                    1   N/I       0x25       0x25   .absSeg28
+.abs_section_28                    1   N/I       0x28       0x28   .absSeg29
+.abs_section_2b                    1   N/I       0x2B       0x2B   .absSeg30
+.abs_section_2e                    1   N/I       0x2E       0x2E   .absSeg31
+.abs_section_31                    1   N/I       0x31       0x31   .absSeg32
+.abs_section_34                    1   N/I       0x34       0x34   .absSeg33
+.abs_section_3a                    1   N/I       0x3A       0x3A   .absSeg34
+.abs_section_3b                    1   N/I       0x3B       0x3B   .absSeg35
+.abs_section_3c                    1   N/I       0x3C       0x3C   .absSeg36
+.abs_section_3d                    1   N/I       0x3D       0x3D   .absSeg37
+.abs_section_3e                    1   N/I       0x3E       0x3E   .absSeg38
+.abs_section_3f                    1   N/I       0x3F       0x3F   .absSeg39
+.abs_section_42                    1   N/I       0x42       0x42   .absSeg40
+.abs_section_43                    1   N/I       0x43       0x43   .absSeg41
+.abs_section_44                    1   N/I       0x44       0x44   .absSeg42
+.abs_section_45                    1   N/I       0x45       0x45   .absSeg43
+.abs_section_46                    1   N/I       0x46       0x46   .absSeg44
+.abs_section_47                    1   N/I       0x47       0x47   .absSeg45
+.abs_section_48                    1   N/I       0x48       0x48   .absSeg46
+.abs_section_49                    1   N/I       0x49       0x49   .absSeg47
+.abs_section_4a                    1   N/I       0x4A       0x4A   .absSeg48
+.abs_section_4b                    1   N/I       0x4B       0x4B   .absSeg49
+.abs_section_4c                    1   N/I       0x4C       0x4C   .absSeg50
+.abs_section_50                    1   N/I       0x50       0x50   .absSeg51
+.abs_section_51                    1   N/I       0x51       0x51   .absSeg52
+.abs_section_52                    1   N/I       0x52       0x52   .absSeg53
+.abs_section_53                    1   N/I       0x53       0x53   .absSeg54
+.abs_section_58                    1   N/I       0x58       0x58   .absSeg55
+.abs_section_59                    1   N/I       0x59       0x59   .absSeg56
+.abs_section_5a                    1   N/I       0x5A       0x5A   .absSeg57
+.abs_section_5b                    1   N/I       0x5B       0x5B   .absSeg58
+.abs_section_5c                    1   N/I       0x5C       0x5C   .absSeg59
+.abs_section_5d                    1   N/I       0x5D       0x5D   .absSeg60
+.abs_section_60                    1   N/I       0x60       0x60   .absSeg61
+.abs_section_65                    1   N/I       0x65       0x65   .absSeg62
+.abs_section_68                    1   N/I       0x68       0x68   .absSeg63
+.abs_section_6c                    1   N/I       0x6C       0x6C   .absSeg64
+.abs_section_6d                    1   N/I       0x6D       0x6D   .absSeg65
+.abs_section_6e                    1   N/I       0x6E       0x6E   .absSeg66
+.abs_section_70                    1   N/I       0x70       0x70   .absSeg67
+.abs_section_71                    1   N/I       0x71       0x71   .absSeg68
+.abs_section_72                    1   N/I       0x72       0x72   .absSeg69
+.abs_section_73                    1   N/I       0x73       0x73   .absSeg70
+.abs_section_80                    1   N/I       0x80       0x80   .absSeg71
+.abs_section_88                    1   N/I       0x88       0x88   .absSeg72
+.abs_section_89                    1   N/I       0x89       0x89   .absSeg73
+.abs_section_8a                    1   N/I       0x8A       0x8A   .absSeg74
+.abs_section_90                    1   N/I       0x90       0x90   .absSeg75
+.abs_section_91                    1   N/I       0x91       0x91   .absSeg76
+.abs_section_92                    1   N/I       0x92       0x92   .absSeg77
+.abs_section_93                    1   N/I       0x93       0x93   .absSeg78
+.abs_section_94                    1   N/I       0x94       0x94   .absSeg79
+.abs_section_95                    1   N/I       0x95       0x95   .absSeg80
+.abs_section_96                    1   N/I       0x96       0x96   .absSeg81
+.abs_section_97                    1   N/I       0x97       0x97   .absSeg82
+.abs_section_98                    1   N/I       0x98       0x98   .absSeg83
+.abs_section_9d                    1   N/I       0x9D       0x9D   .absSeg84
+.abs_section_9e                    1   N/I       0x9E       0x9E   .absSeg85
+.abs_section_9f                    1   N/I       0x9F       0x9F   .absSeg86
+.abs_section_a0                    1   N/I       0xA0       0xA0   .absSeg87
+.abs_section_a1                    1   N/I       0xA1       0xA1   .absSeg88
+.abs_section_a2                    1   N/I       0xA2       0xA2   .absSeg89
+.abs_section_a3                    1   N/I       0xA3       0xA3   .absSeg90
+.abs_section_1800                  1   N/I     0x1800     0x1800   .absSeg91
+.abs_section_1801                  1   N/I     0x1801     0x1801   .absSeg92
+.abs_section_1802                  1   N/I     0x1802     0x1802   .absSeg93
+.abs_section_1803                  1   N/I     0x1803     0x1803   .absSeg94
+.abs_section_1809                  1   N/I     0x1809     0x1809   .absSeg95
+.abs_section_180a                  1   N/I     0x180A     0x180A   .absSeg96
+.abs_section_1816                  1   N/I     0x1816     0x1816   .absSeg97
+.abs_section_1817                  1   N/I     0x1817     0x1817   .absSeg98
+.abs_section_1818                  1   N/I     0x1818     0x1818   .absSeg99
+.abs_section_1820                  1   N/I     0x1820     0x1820   .absSeg100
+.abs_section_1821                  1   N/I     0x1821     0x1821   .absSeg101
+.abs_section_1823                  1   N/I     0x1823     0x1823   .absSeg102
+.abs_section_1824                  1   N/I     0x1824     0x1824   .absSeg103
+.abs_section_1825                  1   N/I     0x1825     0x1825   .absSeg104
+.abs_section_1826                  1   N/I     0x1826     0x1826   .absSeg105
+.abs_section_1840                  1   N/I     0x1840     0x1840   .absSeg106
+.abs_section_1841                  1   N/I     0x1841     0x1841   .absSeg107
+.abs_section_1842                  1   N/I     0x1842     0x1842   .absSeg108
+.abs_section_1844                  1   N/I     0x1844     0x1844   .absSeg109
+.abs_section_1845                  1   N/I     0x1845     0x1845   .absSeg110
+.abs_section_1846                  1   N/I     0x1846     0x1846   .absSeg111
+.abs_section_1848                  1   N/I     0x1848     0x1848   .absSeg112
+.abs_section_1849                  1   N/I     0x1849     0x1849   .absSeg113
+.abs_section_184a                  1   N/I     0x184A     0x184A   .absSeg114
+.abs_section_184c                  1   N/I     0x184C     0x184C   .absSeg115
+.abs_section_184d                  1   N/I     0x184D     0x184D   .absSeg116
+.abs_section_184e                  1   N/I     0x184E     0x184E   .absSeg117
+.abs_section_1850                  1   N/I     0x1850     0x1850   .absSeg118
+.abs_section_1851                  1   N/I     0x1851     0x1851   .absSeg119
+.abs_section_1852                  1   N/I     0x1852     0x1852   .absSeg120
+.abs_section_1854                  1   N/I     0x1854     0x1854   .absSeg121
+.abs_section_1855                  1   N/I     0x1855     0x1855   .absSeg122
+.abs_section_1856                  1   N/I     0x1856     0x1856   .absSeg123
+.abs_section_1858                  1   N/I     0x1858     0x1858   .absSeg124
+.abs_section_1859                  1   N/I     0x1859     0x1859   .absSeg125
+.abs_section_185a                  1   N/I     0x185A     0x185A   .absSeg126
+.abs_section_12                    2   N/I       0x12       0x13   .absSeg127
+.abs_section_14                    2   N/I       0x14       0x15   .absSeg128
+.abs_section_21                    2   N/I       0x21       0x22   .absSeg129
+.abs_section_23                    2   N/I       0x23       0x24   .absSeg130
+.abs_section_26                    2   N/I       0x26       0x27   .absSeg131
+.abs_section_29                    2   N/I       0x29       0x2A   .absSeg132
+.abs_section_2c                    2   N/I       0x2C       0x2D   .absSeg133
+.abs_section_2f                    2   N/I       0x2F       0x30   .absSeg134
+.abs_section_32                    2   N/I       0x32       0x33   .absSeg135
+.abs_section_35                    2   N/I       0x35       0x36   .absSeg136
+.abs_section_38                    2   N/I       0x38       0x39   .absSeg137
+.abs_section_40                    2   N/I       0x40       0x41   .absSeg138
+.abs_section_54                    2   N/I       0x54       0x55   .absSeg139
+.abs_section_56                    2   N/I       0x56       0x57   .absSeg140
+.abs_section_61                    2   N/I       0x61       0x62   .absSeg141
+.abs_section_63                    2   N/I       0x63       0x64   .absSeg142
+.abs_section_66                    2   N/I       0x66       0x67   .absSeg143
+.abs_section_69                    2   N/I       0x69       0x6A   .absSeg144
+.abs_section_74                    2   N/I       0x74       0x75   .absSeg145
+.abs_section_76                    2   N/I       0x76       0x77   .absSeg146
+.abs_section_1806                  2   N/I     0x1806     0x1807   .absSeg147
+.abs_section_1810                  2   N/I     0x1810     0x1811   .absSeg148
+.abs_section_1812                  2   N/I     0x1812     0x1813   .absSeg149
+.abs_section_1814                  2   N/I     0x1814     0x1815   .absSeg150
+.bss                              20   R/W      0x120      0x133   RAM
+.common                           94   R/W      0x134      0x191   RAM
+.stack                           128   R/W      0x192      0x211   RAM
+.vectSeg151_vect                   2     R     0xFFFE     0xFFFF   .vectSeg151
+
+Summary of section sizes per section type:
+READ_ONLY (R):        143F (dec:     5183)
+READ_WRITE (R/W):      112 (dec:      274)
+NO_INIT (N/I):          AC (dec:      172)
+
+*********************************************************************************************
+VECTOR-ALLOCATION SECTION
+    Address     InitValue   InitFunction
+---------------------------------------------------------------------------------------------
+     0xFFFE        0x19DB   _Startup
+
+*********************************************************************************************
+OBJECT-ALLOCATION SECTION
+     Name               Module                 Addr   hSize   dSize     Ref    Section   RLIB
+---------------------------------------------------------------------------------------------
+MODULE:                 -- BMP180_c.obj --
+- PROCEDURES:
+     resultados_pres_temp                      1B2E      7A     122       1   .text       
+     registros_bmp180                          1BA8      57      87       1   .text       
+     calcula_temp                              1BFF      9A     154       1   .text       
+     calcula_pres                              1C99     214     532       2   .text       
+     escribir_byte                             1EAD      2C      44       1   .text       
+     leer_byte                                 1ED9      43      67       2   .text       
+     I2Cdelay                                  1F1C       7       7      19   .text       
+     i2c_tx                                    1F23      37      55       6   .text       
+     i2c_start                                 1F5A      10      16       3   .text       
+     i2c_rx                                    1F6A      45      69       2   .text       
+     i2c_stop                                  1FAF      11      17       2   .text       
+- VARIABLES:
+     AC1                                        100       2       2       2   .data       
+     AC2                                        102       2       2       2   .data       
+     AC3                                        104       2       2       2   .data       
+     AC4                                        106       2       2       2   .data       
+     AC5                                        108       2       2       2   .data       
+     AC6                                        10A       2       2       2   .data       
+     B1                                         10C       2       2       2   .data       
+     B2                                         10E       2       2       2   .data       
+     MC                                         110       2       2       2   .data       
+     MD                                         112       2       2       2   .data       
+     temp_raw                                   114       4       4       5   .data       
+     pres_raw                                   118       4       4       5   .data       
+     i2c_error                                  134       1       1       2   .common     
+     ppp                                        135       2       2       5   .common     
+     temp                                       137       4       4       2   .common     
+     pres                                       13B       4       4       2   .common     
+     X1                                         13F       4       4      10   .common     
+     X2                                         143       4       4       7   .common     
+     X3                                         147       4       4       4   .common     
+     B3                                         14B       4       4       2   .common     
+     B5                                         14F       4       4       3   .common     
+     B6                                         153       4       4       5   .common     
+     B4                                         157       4       4       3   .common     
+     B7                                         15B       4       4       4   .common     
+     temp_cal                                   15F       4       4       4   .common     
+     pres_cal                                   163       4       4       7   .common     
+     pres_entero                                167       4       4       4   .common     
+     pres_decimal                               16B       4       4       2   .common     
+     temp_entero                                16F       4       4       2   .common     
+     temp_decimal                               173       4       4       2   .common     
+MODULE:                 -- CLK_c.obj --
+- PROCEDURES:
+     CLK_Init                                  1FC0      29      41       1   .text       
+- VARIABLES:
+MODULE:                 -- DHT11_c.obj --
+- PROCEDURES:
+     recibio_datos                             1FE9      64     100       1   .text       
+     lee_1p                                    204D      1A      26       1   .text       
+     lee_0p                                    2067      17      23       1   .text       
+     lee_1h                                    207E      1A      26       1   .text       
+     lee_0h                                    2098      17      23       1   .text       
+     lee_1t                                    20AF      1A      26       1   .text       
+     lee_0t                                    20C9      17      23       1   .text       
+     calculos                                  20E0       D      13       1   .text       
+     bit_paridad                               20ED      10      16       1   .text       
+     bit_1                                     20FD      19      25       1   .text       
+     bit_0                                     2116      19      25       1   .text       
+     start_sensor                              212F      1B      27       1   .text       
+     TIMER_init                                214A       9       9       1   .text       
+     TIMER_init2                               2153       C      12       1   .text       
+     cont_tim                                  215F      37      55       1   .text       
+     delay_dht11                               2196       6       6       2   .text       
+     resultados_hum                            219C      3B      59       1   .text       
+- VARIABLES:
+     j                                          11C       1       1       5   .data       
+     i                                          11D       1       1       5   .data       
+     l                                          11E       1       1       4   .data       
+     p                                          120       1       1       4   .bss        
+     z                                          121       1       1       1   .bss        
+     cant_bits                                  122       1       1       5   .bss        
+     ini_leer                                   123       1       1       3   .bss        
+     dht11_recepbit                             124       1       1       8   .bss        
+     pulsos_largos                              125       2       2       3   .bss        
+     pulsos_cortos                              127       2       2       3   .bss        
+     dht11_humedad                              129       1       1       2   .bss        
+     dht11_temperatura                          12A       1       1       1   .bss        
+     dht11_valor1                               12B       2       2       5   .bss        
+     dht11_valor2                               12D       2       2       5   .bss        
+     dht11_paridad                              12F       1       1       1   .bss        
+     dht11_valor3                               130       1       1       1   .bss        
+     _Vector_17                                FFDC       2       2       0   .abs_section_ffdc
+     tiempo                                     177       2       2       7   .common     
+MODULE:                 -- I2C_c.obj --
+- PROCEDURES:
+     Init_IIC                                  21D7       C      12       1   .text       
+     IIC_write_block                           21E3      2C      44       4   .text       
+- VARIABLES:
+MODULE:                 -- LCD_I2C_c.obj --
+- PROCEDURES:
+     delay_lcd                                 220F       F      15       2   .text       
+     LCD_init                                  221E      40      64       1   .text       
+     LCD_wr                                    225E      77     119       6   .text       
+     LCD_send                                  22D5      3B      59       6   .text       
+     mostrar_mensajeint                        2310      BA     186      12   .text       
+     mostrar_mensaje                           23CA      4A      74      22   .text       
+- VARIABLES:
+     salida_lcd                                 11F       1       1      21   .data       
+MODULE:                 -- RTC_c.obj --
+- PROCEDURES:
+     cuentas                                   2414      D5     213       1   .text       
+     ISR_Vrtc                                  24E9       5       5       1   .text       
+     leer_byte_rtc                             24EE      28      40       7   .text       
+     I2Cdelay_RTC                              2516       7       7      16   .text       
+     i2c_tx_RTC                                251D      37      55       3   .text       
+     i2c_start_RTC                             2554      10      16       2   .text       
+     i2c_rx_RTC                                2564      45      69       1   .text       
+     i2c_stop_RTC                              25A9      11      17       1   .text       
+     bcd_to_dec                                25BA      13      19       7   .text       
+- VARIABLES:
+     _Vector_29                                FFC4       2       2       0   .abs_section_ffc4
+     c                                          179       7       7      14   .common     
+     i2c_error_RTC                              180       1       1       1   .common     
+     seg_dec                                    181       1       1       3   .common     
+     min_dec                                    182       1       1       4   .common     
+     horas_dec                                  183       1       1       4   .common     
+     mes_dec                                    184       1       1       2   .common     
+     anio_dec                                   185       1       1       2   .common     
+     dia_sem_dec                                186       1       1       2   .common     
+     dia_mes_dec                                187       1       1       4   .common     
+     VUmin                                      188       1       1       1   .common     
+     VDmin                                      189       1       1       1   .common     
+     VUs                                        18A       1       1       1   .common     
+     VDs                                        18B       1       1       1   .common     
+     VUhor                                      18C       1       1       1   .common     
+     VDhor                                      18D       1       1       1   .common     
+     VUdia                                      18E       1       1       1   .common     
+     VDdia                                      18F       1       1       1   .common     
+MODULE:                 -- Radiacion_c.obj --
+- PROCEDURES:
+     ADC_init1                                 25CD       F      15       1   .text       
+- VARIABLES:
+     UV                                         190       2       2       1   .common     
+MODULE:                 -- main_c.obj --
+- PROCEDURES:
+     main                                      25DC      FD     253       1   .text       
+     limpia_pantalla                           26D9      35      53       2   .text       
+     muestreo                                  270E      83     131       1   .text       
+     muestreo_datos                            2791      85     133       1   .text       
+     muestra_DIA                               2816      61      97       1   .text       
+     muestra_FECHA                             2877      42      66       1   .text       
+     muestra_HORA                              28B9      28      40       1   .text       
+     MCU_init                                  28E1       8       8       1   .text       
+     tim_ovf                                   28E9      1B      27       1   .text       
+     PORT_init                                 2904      1F      31       1   .text       
+     TPM1_init                                 2923       9       9       1   .text       
+- VARIABLES:
+     STRING......WELCOME.TO......1             19F6      19      25       1   .rodata1    
+     STRING......MY.WEATHER......2             1A0F      19      25       1   .rodata1    
+     STRING.......GRUPO.08.......3             1A28      19      25       1   .rodata1    
+     STRING....COLEGIO.PIO.IX....4             1A41      19      25       1   .rodata1    
+     STRING......................5             1A5A      1C      28       1   .rodata1    
+     STRING......................6             1A76      1C      28       1   .rodata1    
+     STRING......................7             1A92      1C      28       1   .rodata1    
+     STRING......................8             1AAE      1C      28       1   .rodata1    
+     STRING.TEMPERATURA..9                     1ACA       D      13       1   .rodata1    
+     STRING...10                               1AD7       2       2       1   .rodata1    
+     STRING.C.11                               1AD9       2       2       1   .rodata1    
+     STRING.HUMEDAD..12                        1ADB       9       9       1   .rodata1    
+     STRING...13                               1AE4       2       2       1   .rodata1    
+     STRING.PRESION..14                        1AE6       9       9       1   .rodata1    
+     STRING...15                               1AEF       2       2       1   .rodata1    
+     STRING.hPa.16                             1AF1       4       4       1   .rodata1    
+     STRING.Indice.UV..17                      1AF5       B      11       1   .rodata1    
+     STRING.W.m2.18                            1B00       5       5       1   .rodata1    
+     STRING.DOM..19                            1B05       5       5       1   .rodata1    
+     STRING.LUN..20                            1B0A       5       5       1   .rodata1    
+     STRING.MAR..21                            1B0F       5       5       1   .rodata1    
+     STRING.MIE..22                            1B14       5       5       1   .rodata1    
+     STRING.JUE..23                            1B19       5       5       1   .rodata1    
+     STRING.VIE..24                            1B1E       5       5       1   .rodata1    
+     STRING.SAB..25                            1B23       5       5       1   .rodata1    
+     STRING...26                               1B28       2       2       1   .rodata1    
+     STRING...27                               1B2A       2       2       1   .rodata1    
+     STRING...28                               1B2C       2       2       1   .rodata1    
+     sensores_gen                               131       1       1       4   .bss        
+     e                                          132       1       1       4   .bss        
+     time_out                                   133       1       1       3   .bss        
+     _Vector_15                                FFE0       2       2       0   .abs_section_ffe0
+MODULE:                 -- start08_c.obj --
+- PROCEDURES:
+     loadByte                                  1960       E      14       5   .init       
+     Init                                      196E      6D     109       1   .init       
+     _Startup                                  19DB       9       9       0   .init       
+- VARIABLES:
+     _startupData                              19E4       6       6       4   .startData  
+- LABELS:
+     __SEG_END_SSTACK                           212       0       0       1               
+MODULE:                 -- mc9s08jm60_c.obj --
+- PROCEDURES:
+- VARIABLES:
+     _PTAD                                        0       1       1       1   .abs_section_0
+     _PTADD                                       1       1       1       1   .abs_section_1
+     _PTBD                                        2       1       1       1   .abs_section_2
+     _PTBDD                                       3       1       1       1   .abs_section_3
+     _PTCD                                        4       1       1      23   .abs_section_4
+     _PTCDD                                       5       1       1      13   .abs_section_5
+     _PTDD                                        6       1       1       1   .abs_section_6
+     _PTDDD                                       7       1       1       1   .abs_section_7
+     _PTED                                        8       1       1       1   .abs_section_8
+     _PTEDD                                       9       1       1       1   .abs_section_9
+     _PTFD                                        A       1       1      27   .abs_section_a
+     _PTFDD                                       B       1       1      11   .abs_section_b
+     _PTGD                                        C       1       1       1   .abs_section_c
+     _PTGDD                                       D       1       1       1   .abs_section_d
+     _ACMPSC                                      E       1       1       0   .abs_section_e
+     _ADCSC1                                     10       1       1       0   .abs_section_10
+     _ADCSC2                                     11       1       1       1   .abs_section_11
+     _ADCCFG                                     16       1       1       1   .abs_section_16
+     _APCTL1                                     17       1       1       0   .abs_section_17
+     _APCTL2                                     18       1       1       1   .abs_section_18
+     _IRQSC                                      1B       1       1       0   .abs_section_1b
+     _KBISC                                      1C       1       1       0   .abs_section_1c
+     _KBIPE                                      1D       1       1       0   .abs_section_1d
+     _KBIES                                      1E       1       1       0   .abs_section_1e
+     _TPM1SC                                     20       1       1       2   .abs_section_20
+     _TPM1C0SC                                   25       1       1       0   .abs_section_25
+     _TPM1C1SC                                   28       1       1       0   .abs_section_28
+     _TPM1C2SC                                   2B       1       1       0   .abs_section_2b
+     _TPM1C3SC                                   2E       1       1       0   .abs_section_2e
+     _TPM1C4SC                                   31       1       1       0   .abs_section_31
+     _TPM1C5SC                                   34       1       1       0   .abs_section_34
+     _SCI1C1                                     3A       1       1       0   .abs_section_3a
+     _SCI1C2                                     3B       1       1       0   .abs_section_3b
+     _SCI1S1                                     3C       1       1       0   .abs_section_3c
+     _SCI1S2                                     3D       1       1       0   .abs_section_3d
+     _SCI1C3                                     3E       1       1       0   .abs_section_3e
+     _SCI1D                                      3F       1       1       0   .abs_section_3f
+     _SCI2C1                                     42       1       1       0   .abs_section_42
+     _SCI2C2                                     43       1       1       0   .abs_section_43
+     _SCI2S1                                     44       1       1       0   .abs_section_44
+     _SCI2S2                                     45       1       1       0   .abs_section_45
+     _SCI2C3                                     46       1       1       0   .abs_section_46
+     _SCI2D                                      47       1       1       0   .abs_section_47
+     _MCGC1                                      48       1       1       2   .abs_section_48
+     _MCGC2                                      49       1       1       1   .abs_section_49
+     _MCGTRM                                     4A       1       1       0   .abs_section_4a
+     _MCGSC                                      4B       1       1       6   .abs_section_4b
+     _MCGC3                                      4C       1       1       1   .abs_section_4c
+     _SPI1C1                                     50       1       1       0   .abs_section_50
+     _SPI1C2                                     51       1       1       0   .abs_section_51
+     _SPI1BR                                     52       1       1       0   .abs_section_52
+     _SPI1S                                      53       1       1       0   .abs_section_53
+     _IICA                                       58       1       1       0   .abs_section_58
+     _IICF                                       59       1       1       1   .abs_section_59
+     _IICC1                                      5A       1       1       9   .abs_section_5a
+     _IICS                                       5B       1       1       8   .abs_section_5b
+     _IICD                                       5C       1       1       2   .abs_section_5c
+     _IICC2                                      5D       1       1       0   .abs_section_5d
+     _TPM2SC                                     60       1       1       4   .abs_section_60
+     _TPM2C0SC                                   65       1       1       0   .abs_section_65
+     _TPM2C1SC                                   68       1       1       5   .abs_section_68
+     _RTCSC                                      6C       1       1       1   .abs_section_6c
+     _RTCCNT                                     6D       1       1       0   .abs_section_6d
+     _RTCMOD                                     6E       1       1       0   .abs_section_6e
+     _SPI2C1                                     70       1       1       0   .abs_section_70
+     _SPI2C2                                     71       1       1       0   .abs_section_71
+     _SPI2BR                                     72       1       1       0   .abs_section_72
+     _SPI2S                                      73       1       1       0   .abs_section_73
+     _USBCTL0                                    80       1       1       0   .abs_section_80
+     _PERID                                      88       1       1       0   .abs_section_88
+     _IDCOMP                                     89       1       1       0   .abs_section_89
+     _REV                                        8A       1       1       0   .abs_section_8a
+     _INTSTAT                                    90       1       1       0   .abs_section_90
+     _INTENB                                     91       1       1       0   .abs_section_91
+     _ERRSTAT                                    92       1       1       0   .abs_section_92
+     _ERRENB                                     93       1       1       0   .abs_section_93
+     _STAT                                       94       1       1       0   .abs_section_94
+     _CTL                                        95       1       1       0   .abs_section_95
+     _ADDR                                       96       1       1       0   .abs_section_96
+     _FRMNUML                                    97       1       1       0   .abs_section_97
+     _FRMNUMH                                    98       1       1       0   .abs_section_98
+     _EPCTL0                                     9D       1       1       0   .abs_section_9d
+     _EPCTL1                                     9E       1       1       0   .abs_section_9e
+     _EPCTL2                                     9F       1       1       0   .abs_section_9f
+     _EPCTL3                                     A0       1       1       0   .abs_section_a0
+     _EPCTL4                                     A1       1       1       0   .abs_section_a1
+     _EPCTL5                                     A2       1       1       0   .abs_section_a2
+     _EPCTL6                                     A3       1       1       0   .abs_section_a3
+     _SRS                                      1800       1       1       0   .abs_section_1800
+     _SBDFR                                    1801       1       1       0   .abs_section_1801
+     _SOPT1                                    1802       1       1       1   .abs_section_1802
+     _SOPT2                                    1803       1       1       0   .abs_section_1803
+     _SPMSC1                                   1809       1       1       1   .abs_section_1809
+     _SPMSC2                                   180A       1       1       0   .abs_section_180a
+     _DBGC                                     1816       1       1       0   .abs_section_1816
+     _DBGT                                     1817       1       1       0   .abs_section_1817
+     _DBGS                                     1818       1       1       0   .abs_section_1818
+     _FCDIV                                    1820       1       1       0   .abs_section_1820
+     _FOPT                                     1821       1       1       0   .abs_section_1821
+     _FCNFG                                    1823       1       1       0   .abs_section_1823
+     _FPROT                                    1824       1       1       0   .abs_section_1824
+     _FSTAT                                    1825       1       1       0   .abs_section_1825
+     _FCMD                                     1826       1       1       0   .abs_section_1826
+     _PTAPE                                    1840       1       1       0   .abs_section_1840
+     _PTASE                                    1841       1       1       0   .abs_section_1841
+     _PTADS                                    1842       1       1       0   .abs_section_1842
+     _PTBPE                                    1844       1       1       0   .abs_section_1844
+     _PTBSE                                    1845       1       1       0   .abs_section_1845
+     _PTBDS                                    1846       1       1       0   .abs_section_1846
+     _PTCPE                                    1848       1       1       0   .abs_section_1848
+     _PTCSE                                    1849       1       1       0   .abs_section_1849
+     _PTCDS                                    184A       1       1       0   .abs_section_184a
+     _PTDPE                                    184C       1       1       0   .abs_section_184c
+     _PTDSE                                    184D       1       1       0   .abs_section_184d
+     _PTDDS                                    184E       1       1       0   .abs_section_184e
+     _PTEPE                                    1850       1       1       0   .abs_section_1850
+     _PTESE                                    1851       1       1       0   .abs_section_1851
+     _PTEDS                                    1852       1       1       0   .abs_section_1852
+     _PTFPE                                    1854       1       1       0   .abs_section_1854
+     _PTFSE                                    1855       1       1       0   .abs_section_1855
+     _PTFDS                                    1856       1       1       0   .abs_section_1856
+     _PTGPE                                    1858       1       1       0   .abs_section_1858
+     _PTGSE                                    1859       1       1       0   .abs_section_1859
+     _PTGDS                                    185A       1       1       0   .abs_section_185a
+     _ADCR                                       12       2       2       0   .abs_section_12
+     _ADCCV                                      14       2       2       0   .abs_section_14
+     _TPM1CNT                                    21       2       2       0   .abs_section_21
+     _TPM1MOD                                    23       2       2       1   .abs_section_23
+     _TPM1C0V                                    26       2       2       0   .abs_section_26
+     _TPM1C1V                                    29       2       2       0   .abs_section_29
+     _TPM1C2V                                    2C       2       2       0   .abs_section_2c
+     _TPM1C3V                                    2F       2       2       0   .abs_section_2f
+     _TPM1C4V                                    32       2       2       0   .abs_section_32
+     _TPM1C5V                                    35       2       2       0   .abs_section_35
+     _SCI1BD                                     38       2       2       0   .abs_section_38
+     _SCI2BD                                     40       2       2       0   .abs_section_40
+     _SPI1D16                                    54       2       2       0   .abs_section_54
+     _SPI1M                                      56       2       2       0   .abs_section_56
+     _TPM2CNT                                    61       2       2       2   .abs_section_61
+     _TPM2MOD                                    63       2       2       4   .abs_section_63
+     _TPM2C0V                                    66       2       2       0   .abs_section_66
+     _TPM2C1V                                    69       2       2       0   .abs_section_69
+     _SPI2D16                                    74       2       2       0   .abs_section_74
+     _SPI2M                                      76       2       2       0   .abs_section_76
+     _SDID                                     1806       2       2       0   .abs_section_1806
+     _DBGCA                                    1810       2       2       0   .abs_section_1810
+     _DBGCB                                    1812       2       2       0   .abs_section_1812
+     _DBGF                                     1814       2       2       0   .abs_section_1814
+MODULE:                 -- rtshc08.o (ansiis.lib) --
+- PROCEDURES:
+     _PUSH_ARGS_L                              292C      20      32       2   .text       
+     _ENTER_UNARY_L                            294C      29      41       2   .text       
+     _ENTER_BINARY_L                           2975      16      22       5   .text       
+     _ENTER_BINARY_L_RC                        298B      19      25       5   .text       
+     _IDIVMOD                                  29A4      69     105       2   .text       
+     _SPLITSIGN                                2A0D      1C      28       2   .text       
+     _LADD_k_is_k_plus_j                       2A29      1F      31       2   .text       
+     _k_is_k_plus_j_l                          2A48      1E      30       2   .text       
+     _k_is_k_plus_j_i                          2A66      12      18       3   .text       
+     _LSUB_k_is_k_minus_j                      2A78      1F      31       2   .text       
+     _LMUL_k_is_k_mul_j                        2A97      81     129       2   .text       
+     _LDIVMOD                                  2B18      A4     164       3   .text       
+     _NEG_L_HX                                 2BBC      13      19       3   .text       
+     _ABS_L_HX                                 2BCF       6       6       2   .text       
+     _SPLITSIGN_L                              2BD5       A      10       2   .text       
+     _LDIVU_k_is_k_div_j                       2BDF      17      23       1   .text       
+     _LMODS_k_is_k_mod_j                       2BF6      18      24       1   .text       
+     _LDIVS_k_is_k_div_j                       2C0E      27      39       2   .text       
+     _IDIVS_STAR08                             2C35      1B      27       1   .text       
+     _IDIVU_STAR08                             2C50       D      13       1   .text       
+     _IMODS_STAR08                             2C5D      25      37       1   .text       
+     _ILSL                                     2C82       C      12       2   .text       
+     _LADD                                     2C8E       6       6       7   .text       
+     _LADD_RC                                  2C94       6       6       5   .text       
+     _LSUB                                     2C9A       6       6       2   .text       
+     _LSUB_RC                                  2CA0       6       6       3   .text       
+     _LMUL                                     2CA6       6       6       9   .text       
+     _LMUL_RC                                  2CAC       6       6       3   .text       
+     _LDIVS                                    2CB2       6       6       1   .text       
+     _LDIVS_RC                                 2CB8       6       6      17   .text       
+     _LDIVU                                    2CBE       6       6       2   .text       
+     _LMODS_RC                                 2CC4       6       6       4   .text       
+     _LLSR                                     2CCA      16      22       1   .text       
+     _LLSL                                     2CE0      16      22       4   .text       
+     _COPY                                     2CF6      30      48       2   .text       
+     _POP32                                    2D26      1A      26      25   .text       
+     _SEXT16_32                                2D40       D      13       7   .text       
+     _Jump_Table_Header_Offset                 2D4D      24      36       2   .text       
+- VARIABLES:
+
+*********************************************************************************************
+MODULE STATISTIC
+  Name                                      Data   Code  Const
+---------------------------------------------------------------------------------------------
+  BMP180_c.obj                                95   1170      0
+  CLK_c.obj                                    0     41      0
+  DHT11_c.obj                                 22    494      2
+  I2C_c.obj                                    0     56      0
+  LCD_I2C_c.obj                                1    517      0
+  RTC_c.obj                                   23    441      2
+  Radiacion_c.obj                              2     15      0
+  main_c.obj                                   3    848    314
+  start08_c.obj                                0    132      0
+  mc9s08jm60_c.obj                           172      0      0
+  rtshc08.o (ansiis.lib)                       0   1093      0
+  other                                      128     20     38
+
+*********************************************************************************************
+SECTION USE IN OBJECT-ALLOCATION SECTION
+---------------------------------------------------------------------------------------------
+SECTION: ".text"
+  resultados_pres_temp registros_bmp180 calcula_temp calcula_pres 
+  escribir_byte leer_byte I2Cdelay i2c_tx i2c_start i2c_rx i2c_stop CLK_Init 
+  recibio_datos lee_1p lee_0p lee_1h lee_0h lee_1t lee_0t calculos bit_paridad 
+  bit_1 bit_0 start_sensor TIMER_init TIMER_init2 cont_tim delay_dht11 
+  resultados_hum Init_IIC IIC_write_block delay_lcd LCD_init LCD_wr LCD_send 
+  mostrar_mensajeint mostrar_mensaje cuentas ISR_Vrtc leer_byte_rtc 
+  I2Cdelay_RTC i2c_tx_RTC i2c_start_RTC i2c_rx_RTC i2c_stop_RTC bcd_to_dec 
+  ADC_init1 main limpia_pantalla muestreo muestreo_datos muestra_DIA 
+  muestra_FECHA muestra_HORA MCU_init tim_ovf PORT_init TPM1_init _PUSH_ARGS_L 
+  _ENTER_UNARY_L _ENTER_BINARY_L _ENTER_BINARY_L_RC _IDIVMOD _SPLITSIGN 
+  _LADD_k_is_k_plus_j _k_is_k_plus_j_l _k_is_k_plus_j_i _LSUB_k_is_k_minus_j 
+  _LMUL_k_is_k_mul_j _LDIVMOD _NEG_L_HX _ABS_L_HX _SPLITSIGN_L 
+  _LDIVU_k_is_k_div_j _LMODS_k_is_k_mod_j _LDIVS_k_is_k_div_j _IDIVS_STAR08 
+  _IDIVU_STAR08 _IMODS_STAR08 _ILSL _LADD _LADD_RC _LSUB _LSUB_RC _LMUL 
+  _LMUL_RC _LDIVS _LDIVS_RC _LDIVU _LMODS_RC _LLSR _LLSL _COPY _POP32 
+  _SEXT16_32 _Jump_Table_Header_Offset 
+SECTION: ".data"
+  AC1 AC2 AC3 AC4 AC5 AC6 B1 B2 MC MD temp_raw pres_raw j i l salida_lcd 
+SECTION: ".bss"
+  p z cant_bits ini_leer dht11_recepbit pulsos_largos pulsos_cortos 
+  dht11_humedad dht11_temperatura dht11_valor1 dht11_valor2 dht11_paridad 
+  dht11_valor3 sensores_gen e time_out 
+SECTION: ".init"
+  loadByte Init _Startup 
+SECTION: ".rodata1"
+  STRING......WELCOME.TO......1 STRING......MY.WEATHER......2 
+  STRING.......GRUPO.08.......3 STRING....COLEGIO.PIO.IX....4 
+  STRING......................5 STRING......................6 
+  STRING......................7 STRING......................8 
+  STRING.TEMPERATURA..9 STRING...10 STRING.C.11 STRING.HUMEDAD..12 STRING...13 
+  STRING.PRESION..14 STRING...15 STRING.hPa.16 STRING.Indice.UV..17 
+  STRING.W.m2.18 STRING.DOM..19 STRING.LUN..20 STRING.MAR..21 STRING.MIE..22 
+  STRING.JUE..23 STRING.VIE..24 STRING.SAB..25 STRING...26 STRING...27 
+  STRING...28 
+SECTION: ".common"
+  i2c_error ppp temp pres X1 X2 X3 B3 B5 B6 B4 B7 temp_cal pres_cal 
+  pres_entero pres_decimal temp_entero temp_decimal tiempo c i2c_error_RTC 
+  seg_dec min_dec horas_dec mes_dec anio_dec dia_sem_dec dia_mes_dec VUmin 
+  VDmin VUs VDs VUhor VDhor VUdia VDdia UV 
+SECTION: ".abs_section_ffdc"
+  _Vector_17 
+SECTION: ".abs_section_ffc4"
+  _Vector_29 
+SECTION: ".abs_section_ffe0"
+  _Vector_15 
+SECTION: ".abs_section_0"
+  _PTAD 
+SECTION: ".abs_section_1"
+  _PTADD 
+SECTION: ".abs_section_2"
+  _PTBD 
+SECTION: ".abs_section_3"
+  _PTBDD 
+SECTION: ".abs_section_4"
+  _PTCD 
+SECTION: ".abs_section_5"
+  _PTCDD 
+SECTION: ".abs_section_6"
+  _PTDD 
+SECTION: ".abs_section_7"
+  _PTDDD 
+SECTION: ".abs_section_8"
+  _PTED 
+SECTION: ".abs_section_9"
+  _PTEDD 
+SECTION: ".abs_section_a"
+  _PTFD 
+SECTION: ".abs_section_b"
+  _PTFDD 
+SECTION: ".abs_section_c"
+  _PTGD 
+SECTION: ".abs_section_d"
+  _PTGDD 
+SECTION: ".abs_section_e"
+  _ACMPSC 
+SECTION: ".abs_section_10"
+  _ADCSC1 
+SECTION: ".abs_section_11"
+  _ADCSC2 
+SECTION: ".abs_section_16"
+  _ADCCFG 
+SECTION: ".abs_section_17"
+  _APCTL1 
+SECTION: ".abs_section_18"
+  _APCTL2 
+SECTION: ".abs_section_1b"
+  _IRQSC 
+SECTION: ".abs_section_1c"
+  _KBISC 
+SECTION: ".abs_section_1d"
+  _KBIPE 
+SECTION: ".abs_section_1e"
+  _KBIES 
+SECTION: ".abs_section_20"
+  _TPM1SC 
+SECTION: ".abs_section_25"
+  _TPM1C0SC 
+SECTION: ".abs_section_28"
+  _TPM1C1SC 
+SECTION: ".abs_section_2b"
+  _TPM1C2SC 
+SECTION: ".abs_section_2e"
+  _TPM1C3SC 
+SECTION: ".abs_section_31"
+  _TPM1C4SC 
+SECTION: ".abs_section_34"
+  _TPM1C5SC 
+SECTION: ".abs_section_3a"
+  _SCI1C1 
+SECTION: ".abs_section_3b"
+  _SCI1C2 
+SECTION: ".abs_section_3c"
+  _SCI1S1 
+SECTION: ".abs_section_3d"
+  _SCI1S2 
+SECTION: ".abs_section_3e"
+  _SCI1C3 
+SECTION: ".abs_section_3f"
+  _SCI1D 
+SECTION: ".abs_section_42"
+  _SCI2C1 
+SECTION: ".abs_section_43"
+  _SCI2C2 
+SECTION: ".abs_section_44"
+  _SCI2S1 
+SECTION: ".abs_section_45"
+  _SCI2S2 
+SECTION: ".abs_section_46"
+  _SCI2C3 
+SECTION: ".abs_section_47"
+  _SCI2D 
+SECTION: ".abs_section_48"
+  _MCGC1 
+SECTION: ".abs_section_49"
+  _MCGC2 
+SECTION: ".abs_section_4a"
+  _MCGTRM 
+SECTION: ".abs_section_4b"
+  _MCGSC 
+SECTION: ".abs_section_4c"
+  _MCGC3 
+SECTION: ".abs_section_50"
+  _SPI1C1 
+SECTION: ".abs_section_51"
+  _SPI1C2 
+SECTION: ".abs_section_52"
+  _SPI1BR 
+SECTION: ".abs_section_53"
+  _SPI1S 
+SECTION: ".abs_section_58"
+  _IICA 
+SECTION: ".abs_section_59"
+  _IICF 
+SECTION: ".abs_section_5a"
+  _IICC1 
+SECTION: ".abs_section_5b"
+  _IICS 
+SECTION: ".abs_section_5c"
+  _IICD 
+SECTION: ".abs_section_5d"
+  _IICC2 
+SECTION: ".abs_section_60"
+  _TPM2SC 
+SECTION: ".abs_section_65"
+  _TPM2C0SC 
+SECTION: ".abs_section_68"
+  _TPM2C1SC 
+SECTION: ".abs_section_6c"
+  _RTCSC 
+SECTION: ".abs_section_6d"
+  _RTCCNT 
+SECTION: ".abs_section_6e"
+  _RTCMOD 
+SECTION: ".abs_section_70"
+  _SPI2C1 
+SECTION: ".abs_section_71"
+  _SPI2C2 
+SECTION: ".abs_section_72"
+  _SPI2BR 
+SECTION: ".abs_section_73"
+  _SPI2S 
+SECTION: ".abs_section_80"
+  _USBCTL0 
+SECTION: ".abs_section_88"
+  _PERID 
+SECTION: ".abs_section_89"
+  _IDCOMP 
+SECTION: ".abs_section_8a"
+  _REV 
+SECTION: ".abs_section_90"
+  _INTSTAT 
+SECTION: ".abs_section_91"
+  _INTENB 
+SECTION: ".abs_section_92"
+  _ERRSTAT 
+SECTION: ".abs_section_93"
+  _ERRENB 
+SECTION: ".abs_section_94"
+  _STAT 
+SECTION: ".abs_section_95"
+  _CTL 
+SECTION: ".abs_section_96"
+  _ADDR 
+SECTION: ".abs_section_97"
+  _FRMNUML 
+SECTION: ".abs_section_98"
+  _FRMNUMH 
+SECTION: ".abs_section_9d"
+  _EPCTL0 
+SECTION: ".abs_section_9e"
+  _EPCTL1 
+SECTION: ".abs_section_9f"
+  _EPCTL2 
+SECTION: ".abs_section_a0"
+  _EPCTL3 
+SECTION: ".abs_section_a1"
+  _EPCTL4 
+SECTION: ".abs_section_a2"
+  _EPCTL5 
+SECTION: ".abs_section_a3"
+  _EPCTL6 
+SECTION: ".abs_section_1800"
+  _SRS 
+SECTION: ".abs_section_1801"
+  _SBDFR 
+SECTION: ".abs_section_1802"
+  _SOPT1 
+SECTION: ".abs_section_1803"
+  _SOPT2 
+SECTION: ".abs_section_1809"
+  _SPMSC1 
+SECTION: ".abs_section_180a"
+  _SPMSC2 
+SECTION: ".abs_section_1816"
+  _DBGC 
+SECTION: ".abs_section_1817"
+  _DBGT 
+SECTION: ".abs_section_1818"
+  _DBGS 
+SECTION: ".abs_section_1820"
+  _FCDIV 
+SECTION: ".abs_section_1821"
+  _FOPT 
+SECTION: ".abs_section_1823"
+  _FCNFG 
+SECTION: ".abs_section_1824"
+  _FPROT 
+SECTION: ".abs_section_1825"
+  _FSTAT 
+SECTION: ".abs_section_1826"
+  _FCMD 
+SECTION: ".abs_section_1840"
+  _PTAPE 
+SECTION: ".abs_section_1841"
+  _PTASE 
+SECTION: ".abs_section_1842"
+  _PTADS 
+SECTION: ".abs_section_1844"
+  _PTBPE 
+SECTION: ".abs_section_1845"
+  _PTBSE 
+SECTION: ".abs_section_1846"
+  _PTBDS 
+SECTION: ".abs_section_1848"
+  _PTCPE 
+SECTION: ".abs_section_1849"
+  _PTCSE 
+SECTION: ".abs_section_184a"
+  _PTCDS 
+SECTION: ".abs_section_184c"
+  _PTDPE 
+SECTION: ".abs_section_184d"
+  _PTDSE 
+SECTION: ".abs_section_184e"
+  _PTDDS 
+SECTION: ".abs_section_1850"
+  _PTEPE 
+SECTION: ".abs_section_1851"
+  _PTESE 
+SECTION: ".abs_section_1852"
+  _PTEDS 
+SECTION: ".abs_section_1854"
+  _PTFPE 
+SECTION: ".abs_section_1855"
+  _PTFSE 
+SECTION: ".abs_section_1856"
+  _PTFDS 
+SECTION: ".abs_section_1858"
+  _PTGPE 
+SECTION: ".abs_section_1859"
+  _PTGSE 
+SECTION: ".abs_section_185a"
+  _PTGDS 
+SECTION: ".abs_section_12"
+  _ADCR 
+SECTION: ".abs_section_14"
+  _ADCCV 
+SECTION: ".abs_section_21"
+  _TPM1CNT 
+SECTION: ".abs_section_23"
+  _TPM1MOD 
+SECTION: ".abs_section_26"
+  _TPM1C0V 
+SECTION: ".abs_section_29"
+  _TPM1C1V 
+SECTION: ".abs_section_2c"
+  _TPM1C2V 
+SECTION: ".abs_section_2f"
+  _TPM1C3V 
+SECTION: ".abs_section_32"
+  _TPM1C4V 
+SECTION: ".abs_section_35"
+  _TPM1C5V 
+SECTION: ".abs_section_38"
+  _SCI1BD 
+SECTION: ".abs_section_40"
+  _SCI2BD 
+SECTION: ".abs_section_54"
+  _SPI1D16 
+SECTION: ".abs_section_56"
+  _SPI1M 
+SECTION: ".abs_section_61"
+  _TPM2CNT 
+SECTION: ".abs_section_63"
+  _TPM2MOD 
+SECTION: ".abs_section_66"
+  _TPM2C0V 
+SECTION: ".abs_section_69"
+  _TPM2C1V 
+SECTION: ".abs_section_74"
+  _SPI2D16 
+SECTION: ".abs_section_76"
+  _SPI2M 
+SECTION: ".abs_section_1806"
+  _SDID 
+SECTION: ".abs_section_1810"
+  _DBGCA 
+SECTION: ".abs_section_1812"
+  _DBGCB 
+SECTION: ".abs_section_1814"
+  _DBGF 
+
+*********************************************************************************************
+OBJECT LIST SORTED BY ADDRESS
+     Name                                      Addr   hSize   dSize     Ref    Section   RLIB
+---------------------------------------------------------------------------------------------
+     _PTAD                                        0       1       1       1   .abs_section_0
+     _PTADD                                       1       1       1       1   .abs_section_1
+     _PTBD                                        2       1       1       1   .abs_section_2
+     _PTBDD                                       3       1       1       1   .abs_section_3
+     _PTCD                                        4       1       1      23   .abs_section_4
+     _PTCDD                                       5       1       1      13   .abs_section_5
+     _PTDD                                        6       1       1       1   .abs_section_6
+     _PTDDD                                       7       1       1       1   .abs_section_7
+     _PTED                                        8       1       1       1   .abs_section_8
+     _PTEDD                                       9       1       1       1   .abs_section_9
+     _PTFD                                        A       1       1      27   .abs_section_a
+     _PTFDD                                       B       1       1      11   .abs_section_b
+     _PTGD                                        C       1       1       1   .abs_section_c
+     _PTGDD                                       D       1       1       1   .abs_section_d
+     _ACMPSC                                      E       1       1       0   .abs_section_e
+     _ADCSC1                                     10       1       1       0   .abs_section_10
+     _ADCSC2                                     11       1       1       1   .abs_section_11
+     _ADCR                                       12       2       2       0   .abs_section_12
+     _ADCCV                                      14       2       2       0   .abs_section_14
+     _ADCCFG                                     16       1       1       1   .abs_section_16
+     _APCTL1                                     17       1       1       0   .abs_section_17
+     _APCTL2                                     18       1       1       1   .abs_section_18
+     _IRQSC                                      1B       1       1       0   .abs_section_1b
+     _KBISC                                      1C       1       1       0   .abs_section_1c
+     _KBIPE                                      1D       1       1       0   .abs_section_1d
+     _KBIES                                      1E       1       1       0   .abs_section_1e
+     _TPM1SC                                     20       1       1       2   .abs_section_20
+     _TPM1CNT                                    21       2       2       0   .abs_section_21
+     _TPM1MOD                                    23       2       2       1   .abs_section_23
+     _TPM1C0SC                                   25       1       1       0   .abs_section_25
+     _TPM1C0V                                    26       2       2       0   .abs_section_26
+     _TPM1C1SC                                   28       1       1       0   .abs_section_28
+     _TPM1C1V                                    29       2       2       0   .abs_section_29
+     _TPM1C2SC                                   2B       1       1       0   .abs_section_2b
+     _TPM1C2V                                    2C       2       2       0   .abs_section_2c
+     _TPM1C3SC                                   2E       1       1       0   .abs_section_2e
+     _TPM1C3V                                    2F       2       2       0   .abs_section_2f
+     _TPM1C4SC                                   31       1       1       0   .abs_section_31
+     _TPM1C4V                                    32       2       2       0   .abs_section_32
+     _TPM1C5SC                                   34       1       1       0   .abs_section_34
+     _TPM1C5V                                    35       2       2       0   .abs_section_35
+     _SCI1BD                                     38       2       2       0   .abs_section_38
+     _SCI1C1                                     3A       1       1       0   .abs_section_3a
+     _SCI1C2                                     3B       1       1       0   .abs_section_3b
+     _SCI1S1                                     3C       1       1       0   .abs_section_3c
+     _SCI1S2                                     3D       1       1       0   .abs_section_3d
+     _SCI1C3                                     3E       1       1       0   .abs_section_3e
+     _SCI1D                                      3F       1       1       0   .abs_section_3f
+     _SCI2BD                                     40       2       2       0   .abs_section_40
+     _SCI2C1                                     42       1       1       0   .abs_section_42
+     _SCI2C2                                     43       1       1       0   .abs_section_43
+     _SCI2S1                                     44       1       1       0   .abs_section_44
+     _SCI2S2                                     45       1       1       0   .abs_section_45
+     _SCI2C3                                     46       1       1       0   .abs_section_46
+     _SCI2D                                      47       1       1       0   .abs_section_47
+     _MCGC1                                      48       1       1       2   .abs_section_48
+     _MCGC2                                      49       1       1       1   .abs_section_49
+     _MCGTRM                                     4A       1       1       0   .abs_section_4a
+     _MCGSC                                      4B       1       1       6   .abs_section_4b
+     _MCGC3                                      4C       1       1       1   .abs_section_4c
+     _SPI1C1                                     50       1       1       0   .abs_section_50
+     _SPI1C2                                     51       1       1       0   .abs_section_51
+     _SPI1BR                                     52       1       1       0   .abs_section_52
+     _SPI1S                                      53       1       1       0   .abs_section_53
+     _SPI1D16                                    54       2       2       0   .abs_section_54
+     _SPI1M                                      56       2       2       0   .abs_section_56
+     _IICA                                       58       1       1       0   .abs_section_58
+     _IICF                                       59       1       1       1   .abs_section_59
+     _IICC1                                      5A       1       1       9   .abs_section_5a
+     _IICS                                       5B       1       1       8   .abs_section_5b
+     _IICD                                       5C       1       1       2   .abs_section_5c
+     _IICC2                                      5D       1       1       0   .abs_section_5d
+     _TPM2SC                                     60       1       1       4   .abs_section_60
+     _TPM2CNT                                    61       2       2       2   .abs_section_61
+     _TPM2MOD                                    63       2       2       4   .abs_section_63
+     _TPM2C0SC                                   65       1       1       0   .abs_section_65
+     _TPM2C0V                                    66       2       2       0   .abs_section_66
+     _TPM2C1SC                                   68       1       1       5   .abs_section_68
+     _TPM2C1V                                    69       2       2       0   .abs_section_69
+     _RTCSC                                      6C       1       1       1   .abs_section_6c
+     _RTCCNT                                     6D       1       1       0   .abs_section_6d
+     _RTCMOD                                     6E       1       1       0   .abs_section_6e
+     _SPI2C1                                     70       1       1       0   .abs_section_70
+     _SPI2C2                                     71       1       1       0   .abs_section_71
+     _SPI2BR                                     72       1       1       0   .abs_section_72
+     _SPI2S                                      73       1       1       0   .abs_section_73
+     _SPI2D16                                    74       2       2       0   .abs_section_74
+     _SPI2M                                      76       2       2       0   .abs_section_76
+     _USBCTL0                                    80       1       1       0   .abs_section_80
+     _PERID                                      88       1       1       0   .abs_section_88
+     _IDCOMP                                     89       1       1       0   .abs_section_89
+     _REV                                        8A       1       1       0   .abs_section_8a
+     _INTSTAT                                    90       1       1       0   .abs_section_90
+     _INTENB                                     91       1       1       0   .abs_section_91
+     _ERRSTAT                                    92       1       1       0   .abs_section_92
+     _ERRENB                                     93       1       1       0   .abs_section_93
+     _STAT                                       94       1       1       0   .abs_section_94
+     _CTL                                        95       1       1       0   .abs_section_95
+     _ADDR                                       96       1       1       0   .abs_section_96
+     _FRMNUML                                    97       1       1       0   .abs_section_97
+     _FRMNUMH                                    98       1       1       0   .abs_section_98
+     _EPCTL0                                     9D       1       1       0   .abs_section_9d
+     _EPCTL1                                     9E       1       1       0   .abs_section_9e
+     _EPCTL2                                     9F       1       1       0   .abs_section_9f
+     _EPCTL3                                     A0       1       1       0   .abs_section_a0
+     _EPCTL4                                     A1       1       1       0   .abs_section_a1
+     _EPCTL5                                     A2       1       1       0   .abs_section_a2
+     _EPCTL6                                     A3       1       1       0   .abs_section_a3
+     AC1                                        100       2       2       2   .data       
+     AC2                                        102       2       2       2   .data       
+     AC3                                        104       2       2       2   .data       
+     AC4                                        106       2       2       2   .data       
+     AC5                                        108       2       2       2   .data       
+     AC6                                        10A       2       2       2   .data       
+     B1                                         10C       2       2       2   .data       
+     B2                                         10E       2       2       2   .data       
+     MC                                         110       2       2       2   .data       
+     MD                                         112       2       2       2   .data       
+     temp_raw                                   114       4       4       5   .data       
+     pres_raw                                   118       4       4       5   .data       
+     j                                          11C       1       1       5   .data       
+     i                                          11D       1       1       5   .data       
+     l                                          11E       1       1       4   .data       
+     salida_lcd                                 11F       1       1      21   .data       
+     p                                          120       1       1       4   .bss        
+     z                                          121       1       1       1   .bss        
+     cant_bits                                  122       1       1       5   .bss        
+     ini_leer                                   123       1       1       3   .bss        
+     dht11_recepbit                             124       1       1       8   .bss        
+     pulsos_largos                              125       2       2       3   .bss        
+     pulsos_cortos                              127       2       2       3   .bss        
+     dht11_humedad                              129       1       1       2   .bss        
+     dht11_temperatura                          12A       1       1       1   .bss        
+     dht11_valor1                               12B       2       2       5   .bss        
+     dht11_valor2                               12D       2       2       5   .bss        
+     dht11_paridad                              12F       1       1       1   .bss        
+     dht11_valor3                               130       1       1       1   .bss        
+     sensores_gen                               131       1       1       4   .bss        
+     e                                          132       1       1       4   .bss        
+     time_out                                   133       1       1       3   .bss        
+     i2c_error                                  134       1       1       2   .common     
+     ppp                                        135       2       2       5   .common     
+     temp                                       137       4       4       2   .common     
+     pres                                       13B       4       4       2   .common     
+     X1                                         13F       4       4      10   .common     
+     X2                                         143       4       4       7   .common     
+     X3                                         147       4       4       4   .common     
+     B3                                         14B       4       4       2   .common     
+     B5                                         14F       4       4       3   .common     
+     B6                                         153       4       4       5   .common     
+     B4                                         157       4       4       3   .common     
+     B7                                         15B       4       4       4   .common     
+     temp_cal                                   15F       4       4       4   .common     
+     pres_cal                                   163       4       4       7   .common     
+     pres_entero                                167       4       4       4   .common     
+     pres_decimal                               16B       4       4       2   .common     
+     temp_entero                                16F       4       4       2   .common     
+     temp_decimal                               173       4       4       2   .common     
+     tiempo                                     177       2       2       7   .common     
+     c                                          179       7       7      14   .common     
+     i2c_error_RTC                              180       1       1       1   .common     
+     seg_dec                                    181       1       1       3   .common     
+     min_dec                                    182       1       1       4   .common     
+     horas_dec                                  183       1       1       4   .common     
+     mes_dec                                    184       1       1       2   .common     
+     anio_dec                                   185       1       1       2   .common     
+     dia_sem_dec                                186       1       1       2   .common     
+     dia_mes_dec                                187       1       1       4   .common     
+     VUmin                                      188       1       1       1   .common     
+     VDmin                                      189       1       1       1   .common     
+     VUs                                        18A       1       1       1   .common     
+     VDs                                        18B       1       1       1   .common     
+     VUhor                                      18C       1       1       1   .common     
+     VDhor                                      18D       1       1       1   .common     
+     VUdia                                      18E       1       1       1   .common     
+     VDdia                                      18F       1       1       1   .common     
+     UV                                         190       2       2       1   .common     
+     _SRS                                      1800       1       1       0   .abs_section_1800
+     _SBDFR                                    1801       1       1       0   .abs_section_1801
+     _SOPT1                                    1802       1       1       1   .abs_section_1802
+     _SOPT2                                    1803       1       1       0   .abs_section_1803
+     _SDID                                     1806       2       2       0   .abs_section_1806
+     _SPMSC1                                   1809       1       1       1   .abs_section_1809
+     _SPMSC2                                   180A       1       1       0   .abs_section_180a
+     _DBGCA                                    1810       2       2       0   .abs_section_1810
+     _DBGCB                                    1812       2       2       0   .abs_section_1812
+     _DBGF                                     1814       2       2       0   .abs_section_1814
+     _DBGC                                     1816       1       1       0   .abs_section_1816
+     _DBGT                                     1817       1       1       0   .abs_section_1817
+     _DBGS                                     1818       1       1       0   .abs_section_1818
+     _FCDIV                                    1820       1       1       0   .abs_section_1820
+     _FOPT                                     1821       1       1       0   .abs_section_1821
+     _FCNFG                                    1823       1       1       0   .abs_section_1823
+     _FPROT                                    1824       1       1       0   .abs_section_1824
+     _FSTAT                                    1825       1       1       0   .abs_section_1825
+     _FCMD                                     1826       1       1       0   .abs_section_1826
+     _PTAPE                                    1840       1       1       0   .abs_section_1840
+     _PTASE                                    1841       1       1       0   .abs_section_1841
+     _PTADS                                    1842       1       1       0   .abs_section_1842
+     _PTBPE                                    1844       1       1       0   .abs_section_1844
+     _PTBSE                                    1845       1       1       0   .abs_section_1845
+     _PTBDS                                    1846       1       1       0   .abs_section_1846
+     _PTCPE                                    1848       1       1       0   .abs_section_1848
+     _PTCSE                                    1849       1       1       0   .abs_section_1849
+     _PTCDS                                    184A       1       1       0   .abs_section_184a
+     _PTDPE                                    184C       1       1       0   .abs_section_184c
+     _PTDSE                                    184D       1       1       0   .abs_section_184d
+     _PTDDS                                    184E       1       1       0   .abs_section_184e
+     _PTEPE                                    1850       1       1       0   .abs_section_1850
+     _PTESE                                    1851       1       1       0   .abs_section_1851
+     _PTEDS                                    1852       1       1       0   .abs_section_1852
+     _PTFPE                                    1854       1       1       0   .abs_section_1854
+     _PTFSE                                    1855       1       1       0   .abs_section_1855
+     _PTFDS                                    1856       1       1       0   .abs_section_1856
+     _PTGPE                                    1858       1       1       0   .abs_section_1858
+     _PTGSE                                    1859       1       1       0   .abs_section_1859
+     _PTGDS                                    185A       1       1       0   .abs_section_185a
+     loadByte                                  1960       E      14       5   .init       
+     Init                                      196E      6D     109       1   .init       
+     _Startup                                  19DB       9       9       0   .init       
+     STRING......WELCOME.TO......1             19F6      19      25       1   .rodata1    
+     STRING......MY.WEATHER......2             1A0F      19      25       1   .rodata1    
+     STRING.......GRUPO.08.......3             1A28      19      25       1   .rodata1    
+     STRING....COLEGIO.PIO.IX....4             1A41      19      25       1   .rodata1    
+     STRING......................5             1A5A      1C      28       1   .rodata1    
+     STRING......................6             1A76      1C      28       1   .rodata1    
+     STRING......................7             1A92      1C      28       1   .rodata1    
+     STRING......................8             1AAE      1C      28       1   .rodata1    
+     STRING.TEMPERATURA..9                     1ACA       D      13       1   .rodata1    
+     STRING...10                               1AD7       2       2       1   .rodata1    
+     STRING.C.11                               1AD9       2       2       1   .rodata1    
+     STRING.HUMEDAD..12                        1ADB       9       9       1   .rodata1    
+     STRING...13                               1AE4       2       2       1   .rodata1    
+     STRING.PRESION..14                        1AE6       9       9       1   .rodata1    
+     STRING...15                               1AEF       2       2       1   .rodata1    
+     STRING.hPa.16                             1AF1       4       4       1   .rodata1    
+     STRING.Indice.UV..17                      1AF5       B      11       1   .rodata1    
+     STRING.W.m2.18                            1B00       5       5       1   .rodata1    
+     STRING.DOM..19                            1B05       5       5       1   .rodata1    
+     STRING.LUN..20                            1B0A       5       5       1   .rodata1    
+     STRING.MAR..21                            1B0F       5       5       1   .rodata1    
+     STRING.MIE..22                            1B14       5       5       1   .rodata1    
+     STRING.JUE..23                            1B19       5       5       1   .rodata1    
+     STRING.VIE..24                            1B1E       5       5       1   .rodata1    
+     STRING.SAB..25                            1B23       5       5       1   .rodata1    
+     STRING...26                               1B28       2       2       1   .rodata1    
+     STRING...27                               1B2A       2       2       1   .rodata1    
+     STRING...28                               1B2C       2       2       1   .rodata1    
+     resultados_pres_temp                      1B2E      7A     122       1   .text       
+     registros_bmp180                          1BA8      57      87       1   .text       
+     calcula_temp                              1BFF      9A     154       1   .text       
+     calcula_pres                              1C99     214     532       2   .text       
+     escribir_byte                             1EAD      2C      44       1   .text       
+     leer_byte                                 1ED9      43      67       2   .text       
+     I2Cdelay                                  1F1C       7       7      19   .text       
+     i2c_tx                                    1F23      37      55       6   .text       
+     i2c_start                                 1F5A      10      16       3   .text       
+     i2c_rx                                    1F6A      45      69       2   .text       
+     i2c_stop                                  1FAF      11      17       2   .text       
+     CLK_Init                                  1FC0      29      41       1   .text       
+     recibio_datos                             1FE9      64     100       1   .text       
+     lee_1p                                    204D      1A      26       1   .text       
+     lee_0p                                    2067      17      23       1   .text       
+     lee_1h                                    207E      1A      26       1   .text       
+     lee_0h                                    2098      17      23       1   .text       
+     lee_1t                                    20AF      1A      26       1   .text       
+     lee_0t                                    20C9      17      23       1   .text       
+     calculos                                  20E0       D      13       1   .text       
+     bit_paridad                               20ED      10      16       1   .text       
+     bit_1                                     20FD      19      25       1   .text       
+     bit_0                                     2116      19      25       1   .text       
+     start_sensor                              212F      1B      27       1   .text       
+     TIMER_init                                214A       9       9       1   .text       
+     TIMER_init2                               2153       C      12       1   .text       
+     cont_tim                                  215F      37      55       1   .text       
+     delay_dht11                               2196       6       6       2   .text       
+     resultados_hum                            219C      3B      59       1   .text       
+     Init_IIC                                  21D7       C      12       1   .text       
+     IIC_write_block                           21E3      2C      44       4   .text       
+     delay_lcd                                 220F       F      15       2   .text       
+     LCD_init                                  221E      40      64       1   .text       
+     LCD_wr                                    225E      77     119       6   .text       
+     LCD_send                                  22D5      3B      59       6   .text       
+     mostrar_mensajeint                        2310      BA     186      12   .text       
+     mostrar_mensaje                           23CA      4A      74      22   .text       
+     cuentas                                   2414      D5     213       1   .text       
+     ISR_Vrtc                                  24E9       5       5       1   .text       
+     leer_byte_rtc                             24EE      28      40       7   .text       
+     I2Cdelay_RTC                              2516       7       7      16   .text       
+     i2c_tx_RTC                                251D      37      55       3   .text       
+     i2c_start_RTC                             2554      10      16       2   .text       
+     i2c_rx_RTC                                2564      45      69       1   .text       
+     i2c_stop_RTC                              25A9      11      17       1   .text       
+     bcd_to_dec                                25BA      13      19       7   .text       
+     ADC_init1                                 25CD       F      15       1   .text       
+     main                                      25DC      FD     253       1   .text       
+     limpia_pantalla                           26D9      35      53       2   .text       
+     muestreo                                  270E      83     131       1   .text       
+     muestreo_datos                            2791      85     133       1   .text       
+     muestra_DIA                               2816      61      97       1   .text       
+     muestra_FECHA                             2877      42      66       1   .text       
+     muestra_HORA                              28B9      28      40       1   .text       
+     MCU_init                                  28E1       8       8       1   .text       
+     tim_ovf                                   28E9      1B      27       1   .text       
+     PORT_init                                 2904      1F      31       1   .text       
+     TPM1_init                                 2923       9       9       1   .text       
+     _PUSH_ARGS_L                              292C      20      32       2   .text       
+     _ENTER_UNARY_L                            294C      29      41       2   .text       
+     _ENTER_BINARY_L                           2975      16      22       5   .text       
+     _ENTER_BINARY_L_RC                        298B      19      25       5   .text       
+     _IDIVMOD                                  29A4      69     105       2   .text       
+     _SPLITSIGN                                2A0D      1C      28       2   .text       
+     _LADD_k_is_k_plus_j                       2A29      1F      31       2   .text       
+     _k_is_k_plus_j_l                          2A48      1E      30       2   .text       
+     _k_is_k_plus_j_i                          2A66      12      18       3   .text       
+     _LSUB_k_is_k_minus_j                      2A78      1F      31       2   .text       
+     _LMUL_k_is_k_mul_j                        2A97      81     129       2   .text       
+     _LDIVMOD                                  2B18      A4     164       3   .text       
+     _NEG_L_HX                                 2BBC      13      19       3   .text       
+     _ABS_L_HX                                 2BCF       6       6       2   .text       
+     _SPLITSIGN_L                              2BD5       A      10       2   .text       
+     _LDIVU_k_is_k_div_j                       2BDF      17      23       1   .text       
+     _LMODS_k_is_k_mod_j                       2BF6      18      24       1   .text       
+     _LDIVS_k_is_k_div_j                       2C0E      27      39       2   .text       
+     _IDIVS_STAR08                             2C35      1B      27       1   .text       
+     _IDIVU_STAR08                             2C50       D      13       1   .text       
+     _IMODS_STAR08                             2C5D      25      37       1   .text       
+     _ILSL                                     2C82       C      12       2   .text       
+     _LADD                                     2C8E       6       6       7   .text       
+     _LADD_RC                                  2C94       6       6       5   .text       
+     _LSUB                                     2C9A       6       6       2   .text       
+     _LSUB_RC                                  2CA0       6       6       3   .text       
+     _LMUL                                     2CA6       6       6       9   .text       
+     _LMUL_RC                                  2CAC       6       6       3   .text       
+     _LDIVS                                    2CB2       6       6       1   .text       
+     _LDIVS_RC                                 2CB8       6       6      17   .text       
+     _LDIVU                                    2CBE       6       6       2   .text       
+     _LMODS_RC                                 2CC4       6       6       4   .text       
+     _LLSR                                     2CCA      16      22       1   .text       
+     _LLSL                                     2CE0      16      22       4   .text       
+     _COPY                                     2CF6      30      48       2   .text       
+     _POP32                                    2D26      1A      26      25   .text       
+     _SEXT16_32                                2D40       D      13       7   .text       
+     _Jump_Table_Header_Offset                 2D4D      24      36       2   .text       
+     _Vector_29                                FFC4       2       2       0   .abs_section_ffc4
+     _Vector_17                                FFDC       2       2       0   .abs_section_ffdc
+     _Vector_15                                FFE0       2       2       0   .abs_section_ffe0
+
+*********************************************************************************************
+UNUSED-OBJECTS SECTION
+---------------------------------------------------------------------------------------------
+NOT USED PROCEDURES
+BMP180_c.obj:
+  i2c_addr 
+I2C_c.obj:
+  IIC_read_block 
+RTC_c.obj:
+  CLCK_init escribir_memo_RTC leer_memo_RTC escribir_byte_rtc 
+  escribir_byte_mem_RTC leer_byte_mem_RTC i2c_addr_RTC init_RTC delay 
+Radiacion_c.obj:
+  medicion_uv 
+rtshc08.o (ansiis.lib):
+  _PUSH_ARGS_D _ENTER_UNARY_L64 _ENTER_UNARY_L64_4 _ENTER_BINARY_L_LC 
+  _ENTER_BINARY_L64 _ENTER_BINARY_L64_LC _ENTER_BINARY_L64_RC 
+  _LAND_k_is_k_and_j _LOR_k_is_k_or_j _LXOR_k_is_k_xor_j _LMODU_k_is_k_mod_j 
+  _LCMP_k_rel_j _CMP24_k_rel_j _BMULS _BDIVS _BMODS _IMUL_STAR08 _IMODU_STAR08 
+  _IDIVU_8 _IMODU_8 _IASR _ILSR _ICMP _LINC _LDEC _LNEG _LNOT _LSUB_LC _LAND 
+  _LAND_RC _LOR _LOR_RC _LXOR _LXOR_RC _LDIVS_LC _LDIVU_LC _LDIVU_RC _LMODS 
+  _LMODS_LC _LMODU _LMODU_LC _LMODU_RC _LASR _LCMP _LCMP_RC _PUSH_ARGS_24 
+  _ENTER_BINARY_24_RC _ENTER_BINARY_24 _CMP24 _CMP24_RC _COPY_L _POP64 _STORE32 
+  _STORE64 _SEXT8_32 _CALL_STAR08 _CALL_STAR08_FAR _Jump_Table_Addr 
+  _Jump_Table_Offset _Jump_Table_Header_Addr _Search_Table_16_Addr 
+  _Search_Table_16_Offset _Search_Table_8_Addr _Search_Table_8_Offset _PUSH_CC 
+  _POP_CC _CONV_FAR_TO_NEAR _CONV_FAR_TO_LINEAR _CONV_LINEAR_TO_FAR 
+NOT USED VARIABLES
+BMP180_c.obj:
+  pm 
+RTC_c.obj:
+  b d statreg 
+Radiacion_c.obj:
+  estado_adc vref 
+rtshc08.o (ansiis.lib):
+  _PowOfTwo_8 _PowOfTwo_16 _PowOfTwo_32 errno 
+
+*********************************************************************************************
+COPYDOWN SECTION
+---------------------------------------------------------------------------------------------
+------- ROM-ADDRESS: 0x2D71 ---- SIZE       4 ---
+Filling bytes inserted
+ 00200100
+------- ROM-ADDRESS: 0x2D75 ---- RAM-ADDRESS: 0x100 ---- SIZE       2 ---
+Name of initialized Object : AC1
+ 0198
+------- ROM-ADDRESS: 0x2D77 ---- RAM-ADDRESS: 0x102 ---- SIZE       2 ---
+Name of initialized Object : AC2
+ FFB8
+------- ROM-ADDRESS: 0x2D79 ---- RAM-ADDRESS: 0x104 ---- SIZE       2 ---
+Name of initialized Object : AC3
+ C7D1
+------- ROM-ADDRESS: 0x2D7B ---- RAM-ADDRESS: 0x106 ---- SIZE       2 ---
+Name of initialized Object : AC4
+ 7FE5
+------- ROM-ADDRESS: 0x2D7D ---- RAM-ADDRESS: 0x108 ---- SIZE       2 ---
+Name of initialized Object : AC5
+ 7FF5
+------- ROM-ADDRESS: 0x2D7F ---- RAM-ADDRESS: 0x10A ---- SIZE       2 ---
+Name of initialized Object : AC6
+ 5A71
+------- ROM-ADDRESS: 0x2D81 ---- RAM-ADDRESS: 0x10C ---- SIZE       2 ---
+Name of initialized Object : B1
+ 17F2
+------- ROM-ADDRESS: 0x2D83 ---- SIZE       1 ---
+Filling bytes inserted
+ 00
+------- ROM-ADDRESS: 0x2D84 ---- RAM-ADDRESS: 0x10F ---- SIZE       1 ---
+Name of initialized Object : B2:1
+ 04
+------- ROM-ADDRESS: 0x2D85 ---- RAM-ADDRESS: 0x110 ---- SIZE       2 ---
+Name of initialized Object : MC
+ DDF9
+------- ROM-ADDRESS: 0x2D87 ---- RAM-ADDRESS: 0x112 ---- SIZE       2 ---
+Name of initialized Object : MD
+ 0B34
+------- ROM-ADDRESS: 0x2D89 ---- SIZE       2 ---
+Filling bytes inserted
+ 0000
+------- ROM-ADDRESS: 0x2D8B ---- RAM-ADDRESS: 0x116 ---- SIZE       2 ---
+Name of initialized Object : temp_raw:2
+ 6CFA
+------- ROM-ADDRESS: 0x2D8D ---- SIZE       2 ---
+Filling bytes inserted
+ 0000
+------- ROM-ADDRESS: 0x2D8F ---- RAM-ADDRESS: 0x11A ---- SIZE       2 ---
+Name of initialized Object : pres_raw:2
+ 5D23
+------- ROM-ADDRESS: 0x2D91 ---- RAM-ADDRESS: 0x11C ---- SIZE       1 ---
+Name of initialized Object : j
+ 10
+------- ROM-ADDRESS: 0x2D92 ---- RAM-ADDRESS: 0x11D ---- SIZE       1 ---
+Name of initialized Object : i
+ 10
+------- ROM-ADDRESS: 0x2D93 ---- RAM-ADDRESS: 0x11E ---- SIZE       1 ---
+Name of initialized Object : l
+ 08
+------- ROM-ADDRESS: 0x2D94 ---- RAM-ADDRESS: 0x11F ---- SIZE       1 ---
+Name of initialized Object : salida_lcd
+ 08
+------- ROM-ADDRESS: 0x2D95 ---- SIZE       2 ---
+Filling bytes inserted
+ 0000
+
+*********************************************************************************************
+OBJECT-DEPENDENCIES SECTION
+---------------------------------------------------------------------------------------------
+Init                      USES _startupData loadByte 
+_Startup                  USES __SEG_END_SSTACK Init main 
+resultados_pres_temp      USES ppp leer_byte temp_raw pres_raw calcula_temp 
+                                temp calcula_pres pres escribir_byte I2Cdelay 
+registros_bmp180          USES _PTCDD AC1 AC2 AC3 AC4 AC5 AC6 B1 B2 MC MD 
+                                temp_raw pres_raw 
+calcula_temp              USES AC6 temp_raw _LSUB AC5 _LMUL _LDIVS_RC X1 
+                                _POP32 MC _SEXT16_32 _LLSL MD _LADD _LDIVS X2 B5 
+                                _LADD_RC temp_cal _COPY 
+calcula_pres              USES B5 _LSUB_RC B6 _POP32 _LMUL _LDIVS_RC B2 
+                                _SEXT16_32 X1 AC2 X2 _LADD X3 AC1 _LLSL _LADD_RC B3 AC3 
+                                B1 calcula_pres AC4 _LLSR B4 pres_raw _LSUB 
+                                _LMUL_RC B7 _LDIVU pres_cal _COPY 
+escribir_byte             USES i2c_tx I2Cdelay i2c_stop i2c_error i2c_start 
+leer_byte                 USES i2c_start i2c_tx I2Cdelay i2c_rx i2c_stop 
+i2c_tx                    USES _PTCDD _PTCD I2Cdelay i2c_error 
+i2c_start                 USES _PTCDD _PTCD I2Cdelay 
+i2c_rx                    USES _PTCDD _PTCD I2Cdelay 
+i2c_stop                  USES _PTCDD _PTCD I2Cdelay 
+CLK_Init                  USES _MCGC2 _MCGSC _MCGC1 _MCGC3 
+recibio_datos             USES dht11_recepbit cant_bits lee_1h lee_0h lee_1t 
+                                lee_0t lee_1p lee_0p i j calculos 
+lee_1p                    USES tiempo l pulsos_largos bit_paridad 
+lee_0p                    USES tiempo l pulsos_cortos 
+lee_1h                    USES tiempo i pulsos_largos bit_1 
+lee_0h                    USES tiempo i pulsos_cortos 
+lee_1t                    USES tiempo j pulsos_largos bit_0 
+lee_0t                    USES tiempo j pulsos_cortos 
+calculos                  USES dht11_valor1 dht11_humedad dht11_valor2 
+                                dht11_temperatura 
+bit_paridad               USES l dht11_paridad 
+bit_1                     USES i _ILSL dht11_valor1 
+bit_0                     USES j _ILSL dht11_valor2 
+start_sensor              USES _PTFD _TPM2MOD delay_dht11 TIMER_init2 
+TIMER_init                USES _TPM2MOD _TPM2SC 
+TIMER_init2               USES _TPM2MOD _TPM2SC _TPM2C1SC 
+cont_tim                  USES _TPM2C1SC p _TPM2CNT _IDIVU_STAR08 tiempo 
+                                dht11_recepbit cant_bits 
+delay_dht11               USES _TPM2SC 
+resultados_hum            USES ini_leer _TPM2C1SC _PTFDD j i l p z cant_bits 
+                                dht11_recepbit dht11_valor1 dht11_valor2 dht11_valor3 
+                                TIMER_init start_sensor recibio_datos 
+Init_IIC                  USES _IICC1 _IICF _IICS 
+IIC_write_block           USES _IICC1 _IICD _IICS 
+LCD_init                  USES LCD_wr LCD_send delay_lcd 
+LCD_wr                    USES salida_lcd IIC_write_block delay_lcd 
+LCD_send                  USES salida_lcd IIC_write_block LCD_wr 
+mostrar_mensajeint        USES LCD_send mostrar_mensajeint _IMODS_STAR08 
+                                _IDIVS_STAR08 
+mostrar_mensaje           USES LCD_send 
+cuentas                   USES leer_byte_rtc c bcd_to_dec seg_dec min_dec 
+                                horas_dec dia_sem_dec dia_mes_dec mes_dec anio_dec VUs 
+                                VDs VUmin VDmin VUhor VDhor VUdia VDdia 
+ISR_Vrtc                  USES _RTCSC 
+leer_byte_rtc             USES i2c_start_RTC i2c_tx_RTC I2Cdelay_RTC 
+                                i2c_rx_RTC i2c_stop_RTC 
+i2c_tx_RTC                USES _PTFDD _PTFD I2Cdelay_RTC i2c_error_RTC 
+i2c_start_RTC             USES _PTFDD _PTFD I2Cdelay_RTC 
+i2c_rx_RTC                USES _PTFDD _PTFD I2Cdelay_RTC 
+i2c_stop_RTC              USES _PTFDD _PTFD I2Cdelay_RTC 
+ADC_init1                 USES _SPMSC1 _ADCCFG _ADCSC2 _APCTL2 
+main                      USES MCU_init CLK_Init PORT_init ADC_init1 
+                                registros_bmp180 TPM1_init Init_IIC LCD_init 
+                                STRING......WELCOME.TO......1 mostrar_mensaje STRING......MY.WEATHER......2 
+                                STRING.......GRUPO.08.......3 STRING....COLEGIO.PIO.IX....4 cuentas 
+                                sensores_gen _Jump_Table_Header_Offset resultados_hum 
+                                resultados_pres_temp temp_cal _LDIVS_RC _LSUB_RC temp_entero _POP32 
+                                _LMODS_RC temp_decimal pres_cal pres_entero pres_decimal 
+                                e limpia_pantalla muestreo_datos muestreo 
+                                muestra_DIA muestra_FECHA muestra_HORA 
+limpia_pantalla           USES STRING......................5 mostrar_mensaje 
+                                STRING......................6 STRING......................7 
+                                STRING......................8 
+muestreo                  USES STRING.TEMPERATURA..9 mostrar_mensaje 
+                                STRING...10 STRING.C.11 STRING.HUMEDAD..12 STRING...13 
+                                STRING.PRESION..14 STRING...15 STRING.hPa.16 STRING.Indice.UV..17 
+                                STRING.W.m2.18 
+muestreo_datos            USES temp_entero mostrar_mensajeint temp_decimal 
+                                dht11_humedad pres_entero _LDIVS_RC _LMODS_RC pres_decimal 
+                                UV 
+muestra_DIA               USES dia_sem_dec _Jump_Table_Header_Offset 
+                                STRING.DOM..19 STRING.LUN..20 STRING.MAR..21 STRING.MIE..22 
+                                STRING.JUE..23 STRING.VIE..24 STRING.SAB..25 mostrar_mensaje 
+muestra_FECHA             USES dia_mes_dec mostrar_mensajeint STRING...26 
+                                mostrar_mensaje mes_dec STRING...27 anio_dec 
+muestra_HORA              USES horas_dec mostrar_mensajeint STRING...28 
+                                mostrar_mensaje min_dec 
+MCU_init                  USES _SOPT1 
+tim_ovf                   USES _TPM1SC time_out sensores_gen ini_leer 
+PORT_init                 USES _PTAD _PTBD _PTCD _PTDD _PTED _PTFD _PTGD 
+                                _PTADD _PTBDD _PTCDD _PTDDD _PTEDD _PTFDD _PTGDD 
+TPM1_init                 USES _TPM1MOD _TPM1SC 
+_ENTER_BINARY_L           USES _PUSH_ARGS_L 
+_ENTER_BINARY_L_RC        USES _PUSH_ARGS_L 
+_SPLITSIGN                USES _IDIVMOD 
+_LMUL_k_is_k_mul_j        USES _k_is_k_plus_j_l _k_is_k_plus_j_i 
+_ABS_L_HX                 USES _NEG_L_HX 
+_SPLITSIGN_L              USES _ABS_L_HX 
+_LDIVU_k_is_k_div_j       USES _LDIVMOD 
+_LMODS_k_is_k_mod_j       USES _SPLITSIGN_L _LDIVMOD _NEG_L_HX 
+_LDIVS_k_is_k_div_j       USES _SPLITSIGN_L _LDIVMOD _NEG_L_HX 
+_IDIVS_STAR08             USES _SPLITSIGN 
+_IDIVU_STAR08             USES _IDIVMOD 
+_IMODS_STAR08             USES _SPLITSIGN 
+_LADD                     USES _ENTER_BINARY_L _LADD_k_is_k_plus_j 
+_LADD_RC                  USES _ENTER_BINARY_L_RC _LADD_k_is_k_plus_j 
+_LSUB                     USES _ENTER_BINARY_L _LSUB_k_is_k_minus_j 
+_LSUB_RC                  USES _ENTER_BINARY_L_RC _LSUB_k_is_k_minus_j 
+_LMUL                     USES _ENTER_BINARY_L _LMUL_k_is_k_mul_j 
+_LMUL_RC                  USES _ENTER_BINARY_L_RC _LMUL_k_is_k_mul_j 
+_LDIVS                    USES _ENTER_BINARY_L _LDIVS_k_is_k_div_j 
+_LDIVS_RC                 USES _ENTER_BINARY_L_RC _LDIVS_k_is_k_div_j 
+_LDIVU                    USES _ENTER_BINARY_L _LDIVU_k_is_k_div_j 
+_LMODS_RC                 USES _ENTER_BINARY_L_RC _LMODS_k_is_k_mod_j 
+_LLSR                     USES _ENTER_UNARY_L 
+_LLSL                     USES _ENTER_UNARY_L 
+_Vector_29                USES ISR_Vrtc 
+_Vector_17                USES cont_tim 
+_Vector_15                USES tim_ovf 
+
+*********************************************************************************************
+DEPENDENCY TREE
+*********************************************************************************************
+ main and _Startup Group
+ | 
+ +- main                
+ |  | 
+ |  +- MCU_init            
+ |  |    
+ |  +- CLK_Init            
+ |  |    
+ |  +- PORT_init           
+ |  |    
+ |  +- ADC_init1           
+ |  |    
+ |  +- registros_bmp180    
+ |  |    
+ |  +- TPM1_init           
+ |  |    
+ |  +- Init_IIC            
+ |  |    
+ |  +- LCD_init            
+ |  |  | 
+ |  |  +- LCD_wr              
+ |  |  |  | 
+ |  |  |  +- IIC_write_block     
+ |  |  |  |    
+ |  |  |  +- delay_lcd           
+ |  |  |       
+ |  |  +- LCD_send            
+ |  |  |  | 
+ |  |  |  +- IIC_write_block      (see above)
+ |  |  |  |  
+ |  |  |  +- LCD_wr               (see above)
+ |  |  |     
+ |  |  +- delay_lcd            (see above)
+ |  |     
+ |  +- mostrar_mensaje     
+ |  |  | 
+ |  |  +- LCD_send             (see above)
+ |  |     
+ |  +- cuentas             
+ |  |  | 
+ |  |  +- leer_byte_rtc       
+ |  |  |  | 
+ |  |  |  +- i2c_start_RTC       
+ |  |  |  |  | 
+ |  |  |  |  +- I2Cdelay_RTC        
+ |  |  |  |       
+ |  |  |  +- i2c_tx_RTC          
+ |  |  |  |  | 
+ |  |  |  |  +- I2Cdelay_RTC         (see above)
+ |  |  |  |     
+ |  |  |  +- I2Cdelay_RTC         (see above)
+ |  |  |  |  
+ |  |  |  +- i2c_rx_RTC          
+ |  |  |  |  | 
+ |  |  |  |  +- I2Cdelay_RTC         (see above)
+ |  |  |  |     
+ |  |  |  +- i2c_stop_RTC        
+ |  |  |     | 
+ |  |  |     +- I2Cdelay_RTC         (see above)
+ |  |  |        
+ |  |  +- bcd_to_dec          
+ |  |       
+ |  +- _Jump_Table_Header_Offset
+ |  |    
+ |  +- resultados_hum      
+ |  |  | 
+ |  |  +- TIMER_init          
+ |  |  |    
+ |  |  +- start_sensor        
+ |  |  |  | 
+ |  |  |  +- delay_dht11         
+ |  |  |  |    
+ |  |  |  +- TIMER_init2         
+ |  |  |       
+ |  |  +- recibio_datos       
+ |  |     | 
+ |  |     +- lee_1h              
+ |  |     |  | 
+ |  |     |  +- bit_1               
+ |  |     |     | 
+ |  |     |     +- _ILSL               
+ |  |     |          
+ |  |     +- lee_0h              
+ |  |     |    
+ |  |     +- lee_1t              
+ |  |     |  | 
+ |  |     |  +- bit_0               
+ |  |     |     | 
+ |  |     |     +- _ILSL                (see above)
+ |  |     |        
+ |  |     +- lee_0t              
+ |  |     |    
+ |  |     +- lee_1p              
+ |  |     |  | 
+ |  |     |  +- bit_paridad         
+ |  |     |       
+ |  |     +- lee_0p              
+ |  |     |    
+ |  |     +- calculos            
+ |  |          
+ |  +- resultados_pres_temp
+ |  |  | 
+ |  |  +- leer_byte           
+ |  |  |  | 
+ |  |  |  +- i2c_start           
+ |  |  |  |  | 
+ |  |  |  |  +- I2Cdelay            
+ |  |  |  |       
+ |  |  |  +- i2c_tx              
+ |  |  |  |  | 
+ |  |  |  |  +- I2Cdelay             (see above)
+ |  |  |  |     
+ |  |  |  +- I2Cdelay             (see above)
+ |  |  |  |  
+ |  |  |  +- i2c_rx              
+ |  |  |  |  | 
+ |  |  |  |  +- I2Cdelay             (see above)
+ |  |  |  |     
+ |  |  |  +- i2c_stop            
+ |  |  |     | 
+ |  |  |     +- I2Cdelay             (see above)
+ |  |  |        
+ |  |  +- calcula_temp        
+ |  |  |  | 
+ |  |  |  +- _LSUB               
+ |  |  |  |  | 
+ |  |  |  |  +- _ENTER_BINARY_L     
+ |  |  |  |  |  | 
+ |  |  |  |  |  +- _PUSH_ARGS_L        
+ |  |  |  |  |       
+ |  |  |  |  +- _LSUB_k_is_k_minus_j
+ |  |  |  |       
+ |  |  |  +- _LMUL               
+ |  |  |  |  | 
+ |  |  |  |  +- _ENTER_BINARY_L      (see above)
+ |  |  |  |  |  
+ |  |  |  |  +- _LMUL_k_is_k_mul_j  
+ |  |  |  |     | 
+ |  |  |  |     +- _k_is_k_plus_j_l    
+ |  |  |  |     |    
+ |  |  |  |     +- _k_is_k_plus_j_i    
+ |  |  |  |          
+ |  |  |  +- _LDIVS_RC           
+ |  |  |  |  | 
+ |  |  |  |  +- _ENTER_BINARY_L_RC  
+ |  |  |  |  |  | 
+ |  |  |  |  |  +- _PUSH_ARGS_L         (see above)
+ |  |  |  |  |     
+ |  |  |  |  +- _LDIVS_k_is_k_div_j 
+ |  |  |  |     | 
+ |  |  |  |     +- _SPLITSIGN_L        
+ |  |  |  |     |  | 
+ |  |  |  |     |  +- _ABS_L_HX           
+ |  |  |  |     |     | 
+ |  |  |  |     |     +- _NEG_L_HX           
+ |  |  |  |     |          
+ |  |  |  |     +- _LDIVMOD            
+ |  |  |  |     |    
+ |  |  |  |     +- _NEG_L_HX            (see above)
+ |  |  |  |        
+ |  |  |  +- _POP32              
+ |  |  |  |    
+ |  |  |  +- _SEXT16_32          
+ |  |  |  |    
+ |  |  |  +- _LLSL               
+ |  |  |  |  | 
+ |  |  |  |  +- _ENTER_UNARY_L      
+ |  |  |  |       
+ |  |  |  +- _LADD               
+ |  |  |  |  | 
+ |  |  |  |  +- _ENTER_BINARY_L      (see above)
+ |  |  |  |  |  
+ |  |  |  |  +- _LADD_k_is_k_plus_j 
+ |  |  |  |       
+ |  |  |  +- _LDIVS              
+ |  |  |  |  | 
+ |  |  |  |  +- _ENTER_BINARY_L      (see above)
+ |  |  |  |  |  
+ |  |  |  |  +- _LDIVS_k_is_k_div_j  (see above)
+ |  |  |  |     
+ |  |  |  +- _LADD_RC            
+ |  |  |  |  | 
+ |  |  |  |  +- _ENTER_BINARY_L_RC   (see above)
+ |  |  |  |  |  
+ |  |  |  |  +- _LADD_k_is_k_plus_j  (see above)
+ |  |  |  |     
+ |  |  |  +- _COPY               
+ |  |  |       
+ |  |  +- calcula_pres        
+ |  |  |  | 
+ |  |  |  +- _LSUB_RC            
+ |  |  |  |  | 
+ |  |  |  |  +- _ENTER_BINARY_L_RC   (see above)
+ |  |  |  |  |  
+ |  |  |  |  +- _LSUB_k_is_k_minus_j (see above)
+ |  |  |  |     
+ |  |  |  +- _POP32               (see above)
+ |  |  |  |  
+ |  |  |  +- _LMUL                (see above)
+ |  |  |  |  
+ |  |  |  +- _LDIVS_RC            (see above)
+ |  |  |  |  
+ |  |  |  +- _SEXT16_32           (see above)
+ |  |  |  |  
+ |  |  |  +- _LADD                (see above)
+ |  |  |  |  
+ |  |  |  +- _LLSL                (see above)
+ |  |  |  |  
+ |  |  |  +- _LADD_RC             (see above)
+ |  |  |  |  
+ |  |  |  +- _LLSR               
+ |  |  |  |  | 
+ |  |  |  |  +- _ENTER_UNARY_L       (see above)
+ |  |  |  |     
+ |  |  |  +- _LSUB                (see above)
+ |  |  |  |  
+ |  |  |  +- _LMUL_RC            
+ |  |  |  |  | 
+ |  |  |  |  +- _ENTER_BINARY_L_RC   (see above)
+ |  |  |  |  |  
+ |  |  |  |  +- _LMUL_k_is_k_mul_j   (see above)
+ |  |  |  |     
+ |  |  |  +- _LDIVU              
+ |  |  |  |  | 
+ |  |  |  |  +- _ENTER_BINARY_L      (see above)
+ |  |  |  |  |  
+ |  |  |  |  +- _LDIVU_k_is_k_div_j 
+ |  |  |  |     | 
+ |  |  |  |     +- _LDIVMOD             (see above)
+ |  |  |  |        
+ |  |  |  +- _COPY                (see above)
+ |  |  |     
+ |  |  +- escribir_byte       
+ |  |  |  | 
+ |  |  |  +- i2c_tx               (see above)
+ |  |  |  |  
+ |  |  |  +- I2Cdelay             (see above)
+ |  |  |  |  
+ |  |  |  +- i2c_stop             (see above)
+ |  |  |  |  
+ |  |  |  +- i2c_start            (see above)
+ |  |  |     
+ |  |  +- I2Cdelay             (see above)
+ |  |     
+ |  +- _LDIVS_RC            (see above)
+ |  |  
+ |  +- _LSUB_RC             (see above)
+ |  |  
+ |  +- _POP32               (see above)
+ |  |  
+ |  +- _LMODS_RC           
+ |  |  | 
+ |  |  +- _ENTER_BINARY_L_RC   (see above)
+ |  |  |  
+ |  |  +- _LMODS_k_is_k_mod_j 
+ |  |     | 
+ |  |     +- _SPLITSIGN_L         (see above)
+ |  |     |  
+ |  |     +- _LDIVMOD             (see above)
+ |  |     |  
+ |  |     +- _NEG_L_HX            (see above)
+ |  |        
+ |  +- limpia_pantalla     
+ |  |  | 
+ |  |  +- mostrar_mensaje      (see above)
+ |  |     
+ |  +- muestreo_datos      
+ |  |  | 
+ |  |  +- mostrar_mensajeint  
+ |  |  |  | 
+ |  |  |  +- LCD_send             (see above)
+ |  |  |  |  
+ |  |  |  +- _IMODS_STAR08       
+ |  |  |  |  | 
+ |  |  |  |  +- _SPLITSIGN          
+ |  |  |  |     | 
+ |  |  |  |     +- _IDIVMOD            
+ |  |  |  |          
+ |  |  |  +- _IDIVS_STAR08       
+ |  |  |     | 
+ |  |  |     +- _SPLITSIGN           (see above)
+ |  |  |        
+ |  |  +- _LDIVS_RC            (see above)
+ |  |  |  
+ |  |  +- _LMODS_RC            (see above)
+ |  |     
+ |  +- muestreo            
+ |  |  | 
+ |  |  +- mostrar_mensaje      (see above)
+ |  |     
+ |  +- muestra_DIA         
+ |  |  | 
+ |  |  +- _Jump_Table_Header_Offset (see above)
+ |  |  |  
+ |  |  +- mostrar_mensaje      (see above)
+ |  |     
+ |  +- muestra_FECHA       
+ |  |  | 
+ |  |  +- mostrar_mensajeint   (see above)
+ |  |  |  
+ |  |  +- mostrar_mensaje      (see above)
+ |  |     
+ |  +- muestra_HORA        
+ |     | 
+ |     +- mostrar_mensajeint   (see above)
+ |     |  
+ |     +- mostrar_mensaje      (see above)
+ |        
+ +- _Startup            
+    | 
+    +- Init                
+    |  | 
+    |  +- loadByte            
+    |       
+    +- main                 (see above)
+       
+ _Vector_17          
+ | 
+ +- cont_tim            
+    | 
+    +- _IDIVU_STAR08       
+       | 
+       +- _IDIVMOD             (see above)
+          
+ _Vector_29          
+ | 
+ +- ISR_Vrtc            
+      
+ _Vector_15          
+ | 
+ +- tim_ovf             
+      
+*********************************************************************************************
+STATISTIC SECTION
+---------------------------------------------------------------------------------------------
+
+ExeFile:
+--------
+Number of blocks to be downloaded: 7
+Total size of all blocks to be downloaded: 5183
+

@@ -1,0 +1,17 @@
+"$(ProjDirPath)/Project_Settings/Linker_Files/Project.prm"
+-M
+-ViewHidden
+-WmsgFob"%f%e:%l:%k:%d %m\n"
+-WmsgSd1100
+-WmsgSd1912 
+-Add("$(ProjDirPath)/FLASH/Sources/BMP180_c.obj"
+"$(ProjDirPath)/FLASH/Sources/CLK_c.obj"
+"$(ProjDirPath)/FLASH/Sources/DHT11_c.obj"
+"$(ProjDirPath)/FLASH/Sources/I2C_c.obj"
+"$(ProjDirPath)/FLASH/Sources/LCD_I2C_c.obj"
+"$(ProjDirPath)/FLASH/Sources/RTC_c.obj"
+"$(ProjDirPath)/FLASH/Sources/Radiacion_c.obj"
+"$(ProjDirPath)/FLASH/Sources/main_c.obj"
+"$(ProjDirPath)/FLASH/Project_Settings/Startup_Code/start08_c.obj"
+"$(ProjDirPath)/FLASH/Lib/mc9s08jm60_c.obj"
+"$(MCUToolsBaseDirEnv)/lib/hc08c/lib/ansiis.lib" )
